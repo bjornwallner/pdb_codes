@@ -1,0 +1,445 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f002-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Aman
+N:Aman;
+TEL;TYPE=work,pref:0736-189705
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f045-00006012-bjorn@kantarell
+CATEGORIES:Business
+FN:Anu Ananthakrishnan
+N:Ananthakrishnan;Anu
+TEL;TYPE=cell,pref:070-7712880
+EMAIL:ananthakrishnan@telia.com
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f003-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Benny Andersson
+N:Andersson;Benny
+TEL;TYPE=work:602 12 55
+TEL;TYPE=home,pref:580 165 75
+TEL;TYPE=cell:070-651 86 45
+ADR:;;Sturevägen 7;Järfälla;;177 56;
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f01d-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Ingrid Augrell
+N:Augrell;Ingrid
+TEL;TYPE=home,pref:018-146218
+ADR:;;Trädgårdsgatan 17B #60;Uppsala;;753 09 Uppsala;
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f030-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Olov Augrell
+N:Augrell;Olov
+TEL;TYPE=home,pref:021130346
+TEL;TYPE=cell:0737-278836
+EMAIL:olov@augrell.se
+ADR:;;Traddragarg. 22\n;Västeras;;;Sweden
+NOTE:Custom1:\n
+ 75-08-18\n
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f015-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Torsten Augrell
+N:Augrell;Torsten
+TEL;TYPE=work,pref:454 43 22
+TEL;TYPE=home:582 40 386
+ADR:;;Klockarvägen 10;Bro;;197 30;
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f013-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Jonas Bergström
+N:Bergström;Jonas
+TEL;TYPE=home,pref:6691239
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f04c-00006012-bjorn@kantarell
+CATEGORIES:Business
+FN:Elgiganten Barkarby
+N:Elgiganten Barkarby;
+TEL;TYPE=work,pref:0771-115115
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f034-00006012-bjorn@kantarell
+CATEGORIES:Business
+FN:Arne Elofsson
+N:Elofsson;Arne
+TEL;TYPE=work:5537 8568
+EMAIL:arne@sbc.su.se
+ADR:;;Folkungagatan 56\, 5tr;Stockholm;;;
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f033-00006012-bjorn@kantarell
+CATEGORIES:Business
+FN:Olof Emanuelsson
+N:Emanuelsson;Olof
+TEL;TYPE=work,pref:08-5537 8574
+TEL;TYPE=cell:070 - 3223 794
+EMAIL:olof@sbc.su.se
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f049-00006012-bjorn@kantarell
+CATEGORIES:Business
+FN:Malin Engström
+N:Engström;Malin
+TEL;TYPE=cell,pref:0733-106932
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f006-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Farsan
+N:Farsan;
+TEL;TYPE=cell,pref:070-3727880
+NOTE:Custom1:\n
+ 50-06-16\n
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f007-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Gotland
+N:Gotland;
+TEL;TYPE=home,pref:0498-483297
+ADR:;;Herta Fiskläger\nPL 99;Stånga;;620 13;
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f04d-00006012-bjorn@kantarell
+CATEGORIES:Unfiled
+FN:Erik  Granseth
+N:Granseth;Erik 
+TITLE:Ph.D. Student
+ORG:Stockholm Bioinformatics Center
+TEL;TYPE=work:+4685
+TEL;TYPE=home,pref: +4686547311
+TEL;TYPE=cell:+46706920466
+EMAIL:erikgr@sbc.su.se
+ADR:;;Konradsbergsgatan 4F;Stockholm;;112 59;Sweden
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f018-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Gusten
+N:Gusten;
+EMAIL:070-6552209
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f035-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Haydar
+N:Haydar;
+TEL;TYPE=cell,pref:0736-896528
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f017-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Ann-Marie Högberg
+N:Högberg;Ann-Marie
+TEL;TYPE=home,pref:776 10 85
+ADR:;;Vendelsövägen 9;Haninge;;136 71;
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f016-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Gun-Britt Högberg
+N:Högberg;Gun-Britt
+TEL;TYPE=home,pref:50154418
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f047-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Maggan Högberg
+N:Högberg;Maggan
+TEL;TYPE=home,pref:99 79 08
+ADR:;;;;;;Sweden
+NOTE:Custom1:\n
+ 52-07-18\n
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f01c-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Yngve Högberg
+N:Högberg;Yngve
+TEL;TYPE=cell,pref:070-6690230
+TEL;TYPE=home:50021696
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f01a-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Mikael Jörgensen
+N:Jörgensen;Mikael
+TEL;TYPE=home,pref:58170834
+TEL;TYPE=cell:070-2148225
+ADR:;;Östervägen 10;Kungsängen;;196 30;Sweden
+NOTE:Custom1:\n
+ 74-03-06\n
+ Custom2:\n
+ Code 0403\n
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f037-00006012-bjorn@kantarell
+CATEGORIES:Business
+FN:KTH-hallen
+N:KTH-hallen;
+TEL;TYPE=work,pref:209199
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f048-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Jakob Magano
+N:Magano;Jakob
+TEL;TYPE=home,pref:655 11 89
+TEL;TYPE=cell:070 638 28 30
+ADR:;;Mjölnerbacken 24;Sundbyberg;;17448;
+NOTE:Custom1:\n
+ 74-11-09??\n
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f008-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:  Morsan
+N:Morsan; 
+TEL;TYPE=cell,pref:070-6513929
+EMAIL:lasse-maja@swipnet.se
+NOTE:Custom1:\n
+ 56-06-15\n
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f004-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Anders Nordgren
+N:Nordgren;Anders
+TEL;TYPE=cell:070-997 28 37
+TEL;TYPE=home,pref:58175444
+ADR:;;Ringvägen;;;;
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f039-00006012-bjorn@kantarell
+CATEGORIES:Odd
+FN:Ragnar Sandeklew
+N:Sandeklew;Ragnar
+TEL;TYPE=home,pref:644 73 80
+ADR:;;Bohusgatan 43;Stockholm;;11667;Sweden
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f009-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Sanna
+N:;Sanna
+TITLE:Jur.stud
+TEL;TYPE=cell,pref:0739-705048
+TEL;TYPE=work:08-56622159
+EMAIL:susanna_schalling@hotmail.com
+NOTE:Custom1:\n
+ 78-09-27\n
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f00b-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Schalling
+N:Schalling;
+TEL;TYPE=home,pref:386528
+ADR:;;Måbärsstigen 90;Hässelby;;165 65;Sweden
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f04a-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Johan Stenqvist
+N:Stenqvist;Johan
+TEL;TYPE=work:070-6051147
+TEL;TYPE=home,pref:581 726 01
+EMAIL:johan.stenqvist@skandia.se
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f04b-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Johan Stenqvist
+N:Stenqvist;Johan
+ORG:Skandia CAS
+TEL;TYPE=cell:+46 73 800 15 64
+TEL;TYPE=home:+46 8 581 726 01
+TEL;TYPE=work,pref:+46 8 788 15 64
+EMAIL:johan.stenqvist@skandia.se
+NOTE:portkod: 4283 alt 4444\n \n
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f03a-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Magnus Stenström
+N:Stenström;Magnus
+TEL;TYPE=cell,pref:070-576 82 80
+EMAIL:magnus.stenstrom@bredband.net
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f04f-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Gareth Stockwell
+N:Stockwell;Gareth
+TITLE:PhD Student
+ORG:EMBL - EBI
+TEL;TYPE=work,pref:01223 492548
+TEL;TYPE=cell:07989 971682
+EMAIL:gareth@ebi.ac.uk
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f038-00006012-bjorn@kantarell
+CATEGORIES:Business
+FN:Camilla Thomsson
+N:Thomsson;Camilla
+TEL;TYPE=work,pref:08-7635042
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f050-00006012-bjorn@kantarell
+CATEGORIES:Unfiled
+FN:Värderingshuset
+N:Värderingshuset
+ORG:Värderingshuset
+TEL;TYPE=work,pref:08-695 00 85
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f019-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Håkan Wallin
+N:Wallin;Håkan
+TEL;TYPE=home,pref:58176708
+TEL;TYPE=cell:070-6051224
+ADR:;;Ringvägen 12\n;Kungsängen;;196 30;
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f031-00006012-bjorn@kantarell
+CATEGORIES:Business
+FN:Björn Wallner\n
+N:Wallner\n;Björn
+TITLE:PhD Student
+ORG:Stockholm University\nStockholm Bioinformatics Center
+TEL;TYPE=work,pref:+46-(0)8-5537 85 66 
+TEL;TYPE=home:08-582 402 00
+TEL;TYPE=fax:+46-(0)8-5537 82 14
+EMAIL:bjorn@sbc.su.se
+ADR:;;Stockholm Center for Physics\, Astronomy and Biotechnology\nS
+ tockholm University\nStockholm Bioinformatics Center\n\n\n\n;Stockholm;;106 91;Sweden
+NOTE:Custom1:\n
+ 75 -01-07\n
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f051-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Magnus Wassén
+N:Wassén;Magnus
+TEL;TYPE=home,pref:58171577
+TEL;TYPE=cell:0736-712352\n070-4764094
+ADR:;;Östervägen 12;Kungsängen;;196 30;
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f001-00006012-bjorn@kantarell
+CATEGORIES:Odd
+FN:Rolf Wikström
+N:Wikström;Rolf
+TITLE:CM
+TEL;TYPE=cell,pref:070-655 31 76
+TEL;TYPE=home:720 08 90
+TEL;TYPE=x-other:695 60 39
+EMAIL:Rolf.Wikstrom@sweco.se
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f01b-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Yngsjö
+N:Yngsjö;
+TEL;TYPE=home,pref:044-232818
+ADR:;;Alunvägen 9;Yngsjö;;296 72;
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Judd Montgomery//NONSGML J-Pilot 0.99.5//EN
+UID:palm-addressbook-00e7f012-00006012-bjorn@kantarell
+CATEGORIES:Personal
+FN:Leo Zallin
+N:Zallin;Leo
+TEL;TYPE=home,pref:58176534
+TEL;TYPE=cell:070-7406308
+ADR:;;Bergvägen;Kungsängen;;196 30;Sweden
+END:VCARD

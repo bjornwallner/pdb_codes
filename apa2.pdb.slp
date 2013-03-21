@@ -1,0 +1,3 @@
+Hide & Seek on polyprotein pII3.0.long.ply - selection of parameters
+molecule     seq-l zp-comb zp-pair zp-surf rk-comb rk-pair rk-surf z1-comb z1-pair z1-surf  ep-comb  ep-pair  ep-surf  em-comb  em-pair  em-surf es-comb es-pair es-surf
+apa2           261   -8.65   -4.50   -7.79       1       1       1   -4.44   -4.11   -4.15  -105.84   -35.37   -29.08   140.61    54.83    35.40   28.48   20.06    8.28

@@ -1,0 +1,61 @@
+pos=load('postive.rsa');
+neg=load('negative.rsa');
+aro=load('arom.rsa');
+pol=load('polar.rsa');
+hyd=load('hydrophobic.rsa');
+spe=load('special.rsa');
+
+
+[pos_c pos_p]=hist(pos,20);
+[neg_c neg_p]=hist(neg,20);
+[aro_c aro_p]=hist(aro,20);
+[pol_c pol_p]=hist(pol,20);
+[hyd_c hyd_p]=hist(hyd,20);
+[spe_c spe_p]=hist(spe,20);
+
+pos_f=pos_c/sum(pos_c); 
+neg_f=neg_c/sum(neg_c); 
+aro_f=aro_c/sum(aro_c); 
+pol_f=pol_c/sum(pol_c); 
+hyd_f=hyd_c/sum(hyd_c); 
+spe_f=spe_c/sum(spe_c); 
+%gset output 'negative.ps'
+
+gset terminal postscript color
+gset output 'positive.ps'
+
+title("positive");
+subplot(2,2,1);
+clearplot;
+clearplot;
+title("positive");
+subplot(2,2,1);
+bar(pos_p,pos_f);
+
+subplot(2,2,2);
+clearplot;
+clearplot;
+title("negative");
+subplot(2,2,2);
+bar(neg_p,neg_f);
+
+
+
+
+title("negative");
+subplot(2,2,2);
+bar(neg_p,neg_f);
+
+
+title("aromatic");
+gset output 'aromatic.ps'
+bar(aro_p,aro_f);
+title("polar");
+gset output 'polar.ps'
+bar(pol_p,pol_f);
+title("hydrophobic");
+gset output 'hydrophobic.ps'
+bar(hyd_p,hyd_f);
+title("special");
+gset output 'special.ps'
+bar(spe_p,spe_f);

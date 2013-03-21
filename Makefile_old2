@@ -1,0 +1,8 @@
+CONTACT_MAPS=molecule.o contact_maps.o /afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/nrutil.c /afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/jacobi.c  /afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/eigsrt.c
+
+CCFLAG=-I /afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/
+LFLAG=-lm
+contact_maps: $(CONTACT_MAPS)
+	$(CC) $(LFLAG) -o contact_maps $(CONTACT_MAPS)
+.c.o:	
+	$(CC) -c $(LFLAG) $(CCFLAG)  $*.c

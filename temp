@@ -1,0 +1,9 @@
+  Input pdb filename 
+  Output error filename 
+ MISSING RESIDUES: 134563961-----> 6
+  Number of atoms accepted =  2054
+  Coordinate limits : 
+ -2.17799997  44.5960007
+ -1.59800005  36.7490005
+ -43.769001  14.7889996
+  # of boxes in each direction :  12 10 15

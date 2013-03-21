@@ -1,0 +1,113 @@
+INSTALLATION
+Pcons5 Installation notes
+
+
+1) To unpack the tarball:
+
+kantarell$ tar -xvzf pcons5.tar.gz
+
+this will put everything the folder "pcons5_dir/"
+
+
+2) Two environmental variables, PROQDIR and PCONS5DIR, needs to be set
+in order for the program to run.
+
+In bash shell this is done my the following commands:
+export PROQDIR=/home/ae/bjorn/bin/pcons5_dir/
+export PCONS5DIR=/home/ae/bjorn/bin/pcons5_dir/
+
+where "/home/ae/bjorn/bin/pcons5_dir/" should be the path to where the
+program is installed.
+
+
+3) RUNNING
+
+3.1) THE INPUT FILE
+
+Pcons5 takes a list of protein models as input exemplified by
+"infile.small" below, each line contains the full path to a protein
+model:
+
+kantarell$ head infile.small
+testdir/1fl9A.1ak2.foldfit.10.bb
+testdir/1fl9A.1ake_A.foldfit.8.bb
+testdir/1fl9A.1b0u_A.foldfit.2.bb
+testdir/1fl9A.1b0u_A.mgenthreader.4.bb
+testdir/1fl9A.1cc0_A.inbgu.10.bb
+testdir/1fl9A.1d2n_A.orfeus.6.bb
+testdir/1fl9A.1d6j_A.orfeus.10.bb
+testdir/1fl9A.1e32_A.mgenthreader.9.bb
+testdir/1fl9A.1e32_A.orfeus.5.bb
+testdir/1fl9A.1ega_A.foldfit.7.bb
+
+3.2) THE PDB FILE
+
+To simplify the running all information needed should be in the PDB
+file one example is showed below:
+
+kantarell$ head testdir/1fl9A.1ak2.foldfit.10.bb
+REMARK SS CCCEEEEEEEEECCCHHHHHHHHHHHCCCCCCCCCCCEEEEEECCCCCCEEEEEEEECCCCCCCCHHHHHHHHHCCCCEEEEECCHHHHHCCCCCCEEEEEEECCCCCEEEEEECCCHHHHHHHHHC
+REMARK METHOD foldfit
+MODEL 10
+PARENT 1AK2
+REMARK DATE     1996-06-11
+REMARK SCORE    2.01e+01        0.90
+REMARK The numbering of the residue changed to match the
+REMARK correct structure: Fri Apr 11 15:42:35 2003./BW
+SEQRES   1    127  GLU LYS ALA ILE MET VAL TYR LEU ASN GLY ASP LEU GLY 
+SEQRES   2    127  ALA GLY LYS THR THR LEU THR ARG GLY MET LEU GLN GLY 
+.
+.
+.
+
+
+Description
+----------
+The information used by Pcons are the following lines (the others are optional)
+
+REMARK SS - is the predicted secondary structure for the model
+REMARK SCORE - is the method score (e.g. 2.01e+01)
+MODEL - is the rank from that method (e.g. 10)
+REMARK METHOD - is the specific method (e.g. foldfit) 
+
+4) EXCUTING
+
+If everything is set up correctly, Pcons5 runs using the input file
+descriped above.
+
+There are two testfiles that can be used to check that everything is
+set up OK.  infile.small (takes a few minutes to run) and infile.large
+(takes 30 min to run). The output from these files are in
+infile.small.out and infile.large.out.
+
+Example:
+kantarell$ ./pcons5 infile.small
+testdir/1fl9A.1ak2.foldfit.10.bb                  0.9898  0.9898  1.0167  0.0884  0.6574  0.0471  0.0000
+testdir/1fl9A.1ake_A.foldfit.8.bb                 1.0632  1.1549  1.1353  0.0392  0.6444  0.0984  0.0000
+testdir/1fl9A.1b0u_A.foldfit.2.bb                 1.5379  1.3084  1.6753  0.0470  0.6146  1.0000  0.0000
+testdir/1fl9A.1b0u_A.mgenthreader.4.bb            1.0781  1.1312  0.8933 -0.0119  0.2830  0.7360  0.0000
+testdir/1fl9A.1cc0_A.inbgu.10.bb                  0.8581  1.1457  1.0345  0.0040  0.1696  0.0000  0.0000
+testdir/1fl9A.1d2n_A.orfeus.6.bb                  1.1890  1.1933  1.2650 -0.0320  0.0542  0.9782  0.0000
+testdir/1fl9A.1d6j_A.orfeus.10.bb                 1.1367  1.1031  1.2290  0.0102  0.0668  0.8910  0.0000
+testdir/1fl9A.1e32_A.mgenthreader.9.bb            1.1421  1.2218  1.2931  0.0152  0.4709  0.3280  0.0000
+testdir/1fl9A.1e32_A.orfeus.5.bb                  1.2664  1.1990  1.4146  0.0020  0.1303  0.9864  0.0000
+testdir/1fl9A.1ega_A.foldfit.7.bb                 0.7144  0.7144  0.6885  0.1427  0.6325  0.1064  0.0000
+
+
+1st column  - model
+2nd column  - Pcons5 score
+3rd column  - consensus all
+4th column  - consensus first
+5th column  - ProQMX
+6th column  - ProQLG
+7th column  - Score "good"
+8th column  - Score "very good"
+
+
+Hope everything work, do not hesitate to email me if something does
+not work or look strange.
+
+/Björn
+bjorn@sbc.su.se
+
+

@@ -1,0 +1,6 @@
+#!/bin/bash
+ARCH=`uname`
+#touch *.c *.h
+make -j4 -B GOAL=lgscore_new ARCH=$ARCH
+#touch *.c *.h
+make -j4 -B GOAL=Sscore ARCH=$ARCH

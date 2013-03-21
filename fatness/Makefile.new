@@ -1,0 +1,18 @@
+#FATNESS=molecule.o fatness.o /afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/nrutil.c /afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/jacobi.c  /afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/eigsrt.c /afs/pdc.kth.se/home/b/bjornw/bjorn/source/c/nets/nets.c
+
+FATNESS=molecule.o fatness.o nrutil.c jacobi.c eigsrt.c nets.c
+
+#CCFLAG=-I /afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/
+LFLAG=-lm
+
+
+
+molecule.o: molecule.c molecule.h 
+	$(CC) $(LFLAG) $(CCFLAG) -c molecule.c
+
+fatness: $(FATNESS)
+	$(CC) $(LFLAG) -o fatness $(FATNESS)
+
+
+.c.o:	
+	$(CC) -c $(LFLAG) $(CCFLAG)  $*.c

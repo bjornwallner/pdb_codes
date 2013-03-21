@@ -1,0 +1,5 @@
+PDBFILE 
+VDWFILE /afs/pdc.kth.se/home/b/bjornw/CASP9/apps/naccess/vdw.radii
+STDFILE /afs/pdc.kth.se/home/b/bjornw/CASP9/apps/naccess/standard.data
+PROBE 1.40
+ZSLICE 0.05

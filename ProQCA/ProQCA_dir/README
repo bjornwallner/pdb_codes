@@ -1,0 +1,54 @@
+Installation notes
+
+Environmental variable PROQDIR needs to be set to the location where
+it is installed i.e:
+export PROQDIR=/home/ae/bjorn/bin/ProQCA/
+
+
+ProQCA uses secondary structure prediction in the current version the
+prediction should be in the header of the pdb file denoted by "REMARK
+SS" see example in bar.pdb:
+
+kantarell$ head bar.pdb
+REMARK SS CCCCCCCCCCCCCCHHHHHHHHHHHHHHHHHHHHHHCCCCCHHHHHHHHHHCCCHHHHHHHCCCCCCCCHHHHHHHHHHCCCCHHHHHHHCCCCCCCCCCCEEECCCCEEEEEECCCCCEEEECCCCCCCCCCEEEECCCCCCCCCHHHHHCCCCCCCCCCCCCEEEEEECHHHHHHHHHCCCCCCEECCCCCCCHHHHHHHHHHCCEEEEEEECCCHHHHHHHHHHHHHHHHHHCCCEEEEEECCCCCCHHHHHHHCCHHHHHHHHHCCCHHHHHHHHHHHCCCCCCCHHHHHHHHHHHHHHHHHCCCCHHHHHHHHHHHHHCCCCCHHHHCCCCCC
+REMARK SCORE 8.5
+MODEL 3
+REMARK METHOD inbgu
+REMARK The numbering of the residues changed to match the
+REMARK correct structure: Fri Feb  8 15:16:39 2002./BW
+SEQRES   1    338  MET ARG GLY SER HIS HIS HIS HIS HIS HIS GLY SER GLY 
+SEQRES   2    338  SER MET HIS GLN ARG GLN THR LEU TYR GLN LEU MET ASP 
+SEQRES   3    338  GLY LEU ASN THR PHE TYR GLN GLN SER LEU GLN GLN PRO 
+SEQRES   4    338  VAL ALA THR SER ALA ARG GLN TYR LEU GLU LYS ARG GLY 
+
+The length of ss prediction should correspond to the number of
+residues in the pdb file.
+
+
+Running
+
+If you have set the PROQDIR and have the REMARK SS in the pdb files
+the only thing you have to give to ProQCA is a list of all pdb files,
+i.e: 
+kantarell$ head list
+bar.pdb
+bar.pdb
+bar.pdb
+bar.pdb
+
+kantarell$ ./ProQCA list
+bar.pdb                          0.6772    0.0401
+bar.pdb                          0.6772    0.0401
+bar.pdb                          0.6772    0.0401
+bar.pdb                          0.6772    0.0401
+
+The second column is the predicted -log of LGscore, the third column
+is the predicted MaxSub score.
+
+Hope everything work, do not hesitate to email me if something does
+not work or look strange.
+
+/Björn
+bjorn@sbc.su.se
+
+

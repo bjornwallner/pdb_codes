@@ -1,0 +1,206 @@
+#!/usr/bin/perl -w 
+
+use strict;
+require '/afs/pdc.kth.se/home/b/bjornw/source/perl/bjornlib.pl';
+
+use Storable;
+
+my %casp_local=();
+my %casp_global=();
+my %new_local=();
+my %new_global=();
+
+#READ true qualities
+my %LG=();
+my %S=();
+my %GDT=();
+my %TM=();
+my %MX=();
+my $e<>)old_pcons=();
+open(FILE,"Pcons.dat3.GDT.lg");
+while(<FILE>)
+{
+    chomp;
+    my ($model,$pcons,$GDT,$TM,$MX,$LG,$S)=split(/\s+/);
+    my $target=substr($model,0,5);
+    my $method=substr($model,6);
+    $method=~s/\.pdb//g;
+#    print "$model: $target $method\n";
+    $LG{$target}{$method}=$LG;
+    $S{$target}{$method}=$S;
+    $GDT{$target}{$method}=$GDT;
+    $TM{$target}{$method}=$TM;
+    $MX{$target}{$method}=$MX;
+    $old_pcons{$target}{$method}=$pcons;
+}
+#exit;
+
+if(-e "casp_local.hash")
+{
+    %casp_local=%{retrieve("casp_local.hash")};
+    %casp_global=%{retrieve("casp_global.hash")};
+}
+else
+{
+#casp files
+    foreach my $file(glob("/afs/pdc.kth.se/home/b/bjornw/casp7/targets/T0*/server_predictions/Pcons.server"))
+    {
+	print $file."\n";
+	if($file=~/\/(T0\d\d\d)\//)
+	{
+	    my $target=$1;
+	    print $target."\n";
+	    my ($a,$b)=read_QA($file);
+	    $casp_global{$target}=$a;
+	    $casp_local{$target}=$b;
+	}
+    }
+    store(\%casp_local,"casp_local.hash");
+    store(\%casp_global,"casp_global.hash");
+}
+
+if(-e "Pcons_fast.server.new.local.hash") #if(-e "new_local_capped.hash")
+{
+   
+    %new_local=%{retrieve("Pcons_fast.server.new.local.hash")};
+    %new_global=%{retrieve("Pcons_fast.server.new.global.hash")};
+}
+else
+{
+    foreach my $file(glob("/afs/pdc.kth.se/home/b/bjornw/casp7/targets/server_models/0*/Pcons_fast.server.new")) #foreach my $file(glob("/afs/pdc.kth.se/home/b/bjornw/casp7/targets/server_models/0*/Pcons_fast.server.capped15"))
+    {
+	print $file."\n";
+	if($file=~/\/(0\d\d\d)\//)
+	{
+	    my $target="T".$1;
+	    print $target."\n";
+	    my ($a,$b)=read_QA($file);
+	    $new_global{$target}=$a;
+	    $new_local{$target}=$b;
+	}
+    }
+    store(\%new_local,"Pcons_fast.server.new.local.hash");
+    store(\%new_global,"Pcons_fast.server.new.global.hash");
+}
+
+#exit;
+my @casp=();
+my @new=();
+my @casp_global=();
+my @new_global=();
+#open(OUT,">casp_new");
+open(OUT,">pcons_quality_measure_GTMLS.dat2");
+foreach my $target(keys(%casp_local))
+{
+  #  next if($target ne "T0288");
+    my @casp_global=();
+    my @new_global=();
+    my @LG=();
+#print $target."\n";
+    foreach my $method(keys(%{$casp_global{$target}}))
+    {
+	next if(not(defined($LG{$target}{$method})));
+	print OUT "$target $method $new_global{$target}{$method} $GDT{$target}{$method} $TM{$target}{$method} $MX{$target}{$method} $LG{$target}{$method} $S{$target}{$method} $old_pcons{$target}{$method}\n";
+#	print "$target $method $casp_global{$target}{$method} $new_global{$target}{$method}\n";
+	push(@casp_global,$casp_global{$target}{$method});
+	push(@new_global,$new_global{$target}{$method});
+	push(@LG,$LG{$target}{$method});
+    }
+    #next;
+     if(scalar(@casp_global)>1)
+     {
+	 printf("%s %8.5f %8.5f %8.5f\n",$target,corrcoef([@casp_global],[@new_global]),corrcoef([@LG],[@new_global]),corrcoef([@LG],[@casp_global]));
+     }
+    next;
+    foreach my $method(keys(%{$casp_local{$target}}))
+    {
+	#print "$target $method\n"
+	if(scalar(@{$casp_local{$target}{$method}}) == scalar(@{$new_local{$target}{$method}}))
+	{
+	    #print "$target $method\n";
+	    my @casp=();
+	    my @new=();
+	    for(my $i=0;$i<scalar(@{$casp_local{$target}{$method}});$i++)
+	    {
+		if(${$casp_local{$target}{$method}}[$i] ne "X" &&
+		   ${$new_local{$target}{$method}}[$i] ne "X")
+		{
+		    if(${$casp_local{$target}{$method}}[$i] <5 &&
+		       ${$new_local{$target}{$method}}[$i] <5)
+		    {
+			push(@casp,${$casp_local{$target}{$method}}[$i]);
+			push(@new,${$new_local{$target}{$method}}[$i]);
+		    }
+		    #print OUT "${$casp_local{$target}{$method}}[$i] ${$new_local{$target}{$method}}[$i]\n";
+
+		}
+
+	    }
+	    if(scalar(@casp)>1)
+	    {
+		printf("%s $method %8.5f\n",$target,corrcoef([@casp],[@new]));
+	    }
+	}
+	@{$casp_local{$target}{$method}}=();
+	@{$new_local{$target}{$method}}=();
+	
+	    
+    }
+ #   last;
+   # exit;
+}
+close(OUT);
+#printf("corr %8.5f\n",corrcoef([@casp],[@new]));
+
+if(scalar(@casp_global)>1)
+{
+ #   printf("%s %8.5f\n","TOTAL:",corrcoef([@casp_global],[@new_global]));
+}
+
+sub read_QA
+{
+    my $file=shift;
+    my $start=0;
+    my $key="";
+    my $global_quality=0;
+    my @local_quality=();
+    my %global_quality=();
+    my %local_quality=();
+    open(FILE,$file);
+    while(<FILE>)
+    {
+	if($start)
+	{
+	    chomp;
+	    my @temp=split(/\s+/);
+	    last if(not(defined($temp[0])));
+	    if($temp[0]=~/[A-Z]/ && length($temp[0])>1)
+	    {
+		if(scalar(@local_quality)>0)
+		{
+		    $global_quality{$key}=$global_quality;
+		    @{$local_quality{$key}}=@local_quality;
+		}
+		last if(/^END/);
+		$key=$temp[0];
+		$key=~s/\.pdb$//g;
+		$global_quality=$temp[1];
+		@local_quality=@temp[2..$#temp];
+	    }
+	    else
+	    {
+		@local_quality=(@local_quality,@temp);
+	    }
+	}
+	$start=1 if(/^QMODE 2/);
+    }
+
+    
+    #foreach my $key(keys(%global_quality))
+    #{
+    #	my $size=scalar(@{$local_quality{$key}});
+    #	print "$key $global_quality{$key} $size\n";
+    #	
+    #}
+    return({%global_quality},{%local_quality});
+}

@@ -1,0 +1,113 @@
+A=load('ALA.rsa');
+R=load('ARG.rsa');
+N=load('ASN.rsa');
+D=load('ASP.rsa');
+C=load('CYS.rsa');
+Q=load('GLN.rsa');
+E=load('GLU.rsa');
+G=load('GLY.rsa');
+H=load('HIS.rsa');
+I=load('ILE.rsa');
+L=load('LEU.rsa');
+K=load('LYS.rsa');
+M=load('MET.rsa');
+F=load('PHE.rsa');
+P=load('PRO.rsa');
+S=load('SER.rsa');
+T=load('THR.rsa');
+W=load('TRP.rsa');
+Y=load('TYR.rsa');
+V=load('VAL.rsa');
+
+
+
+[A_c A_p]=hist(A,20);
+[R_c R_p]=hist(R,20);
+[N_c N_p]=hist(N,20);
+[D_c D_p]=hist(D,20);
+[C_c C_p]=hist(C,20);
+[Q_c Q_p]=hist(Q,20);
+[E_c E_p]=hist(E,20);
+[G_c G_p]=hist(G,20);
+[H_c H_p]=hist(H,20);
+[I_c I_p]=hist(I,20);
+[L_c L_p]=hist(L,20);
+[K_c K_p]=hist(K,20);
+[M_c M_p]=hist(M,20);
+[F_c F_p]=hist(F,20);
+[P_c P_p]=hist(P,20);
+[S_c S_p]=hist(S,20);
+[T_c T_p]=hist(T,20);
+[W_c W_p]=hist(W,20);
+[Y_c Y_p]=hist(Y,20);
+[V_c V_p]=hist(V,20);
+
+
+A_f=A_c/sum(A_c);
+R_f=R_c/sum(R_c);
+N_f=N_c/sum(N_c);
+D_f=D_c/sum(D_c);
+C_f=C_c/sum(C_c);
+Q_f=Q_c/sum(Q_c);
+E_f=E_c/sum(E_c);
+G_f=G_c/sum(G_c);
+H_f=H_c/sum(H_c);
+I_f=I_c/sum(I_c);
+L_f=L_c/sum(L_c);
+K_f=K_c/sum(K_c);
+M_f=M_c/sum(M_c);
+F_f=F_c/sum(F_c);
+P_f=P_c/sum(P_c);
+S_f=S_c/sum(S_c);
+T_f=T_c/sum(T_c);
+W_f=W_c/sum(W_c);
+Y_f=Y_c/sum(Y_c);
+V_f=V_c/sum(V_c);
+
+gset terminal postscript color
+gset output 'A.ps'
+title("ALA");
+bar(A_p,A_f)
+
+
+gset output 'R.ps'
+title("ARG");
+bar(R_p,R_f)
+
+
+gset output 'N.ps'
+bar(N_p,N_f);
+gset output 'D.ps'
+bar(D_p,D_f);
+gset output 'C.ps'
+bar(C_p,C_f);
+gset output 'Q.ps'
+bar(Q_p,Q_f);
+gset output 'E.ps'
+bar(E_p,E_f);
+gset output 'G.ps'
+bar(G_p,G_f);
+gset output 'H.ps'
+bar(H_p,H_f);
+gset output 'I.ps'
+bar(I_p,I_f);
+gset output 'L.ps'
+bar(L_p,L_f);
+gset output 'K.ps'
+bar(K_p,K_f);
+gset output 'M.ps'
+bar(M_p,M_f);
+gset output 'F.ps'
+bar(F_p,F_f);
+gset output 'P.ps'
+bar(P_p,P_f);
+gset output 'S.ps'
+bar(S_p,S_f);
+gset output 'T.ps'
+bar(T_p,T_f);
+gset output 'W.ps'
+bar(W_p,W_f);
+gset output 'Y.ps'
+bar(Y_p,Y_f);
+gset output 'V.ps'
+bar(V_p,V_f);

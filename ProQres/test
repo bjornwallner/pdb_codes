@@ -1,0 +1,73 @@
+REM  -------------------- Secondary structure summary -------------------  ~~~~
+REM                                                                        ~~~~
+CHN  apa.pdb -                                                             ~~~~
+REM                                                                        ~~~~
+REM                .         .         .         .         .               ~~~~
+SEQ  1    INTITFDVGNATINKYATFMKSIHNQAKDPTLKCYGIPMLPNTNLTPKYL   50          ~~~~
+STR          EEEEGGG  HHHHHHHHHHHHHHH TTTTEETTEEB  TTTTTTTEE               ~~~~
+REM                                                                        ~~~~
+REM                .         .         .         .         .               ~~~~
+SEQ  51   LVTLQDSSLKTITLMLKRNNLYVMGYADTYNGKCRYHIFKDISNTTERND  100          ~~~~
+STR       EEEEETTTT EEEEEEETTTT EEEEEEEETTEEEEEETTTT  HHHHHH               ~~~~
+REM                                                                        ~~~~
+REM                .         .         .         .         .               ~~~~
+SEQ  101  VMTTLCPNPSSRVGKNINYDSSYPALEKKVGRPRSQVQLGIQILNSGIGK  150          ~~~~
+STR       HHHHH  TTTTEEE        HHHHHHHH   GGG  EEHHHHHHHHHH               ~~~~
+REM                                                                        ~~~~
+REM                .         .         .         .         .               ~~~~
+SEQ  151  IYGVDSFTEKTEAEFLLVAIQMVSEAARFKYIENQVKTNFNRAFYPNAKV  200          ~~~~
+STR       TTTTTTT HHHHHHHHHHHHHHHHHHHHBHHHHHHHHHHTTTEE   HHH               ~~~~
+REM                                                                        ~~~~
+REM                .         .         .         .         .               ~~~~
+SEQ  201  LNLEESWGKISTAIHNAKNGALTSPLELKNANGSKWIVLRVDDIEPDVGL  250          ~~~~
+STR       HHHHHHHHHHHHHHHHTBTTEEEEEEEEETTTT EEEEEEGGG GGGB                 ~~~~
+REM                                                                        ~~~~
+REM                .                                                       ~~~~
+SEQ  251  LKYVNGTCQAT                                         261          ~~~~
+STR       B                                                                ~~~~
+REM                                                                        ~~~~
+REM                                                                        ~~~~
+REM                                                                        ~~~~
+LOC  AlphaHelix   ILE    18 -      ALA     32 -                            ~~~~
+LOC  AlphaHelix   THR   100 -      LEU    110 -                            ~~~~
+LOC  AlphaHelix   TYR   128 -      VAL    135 -                            ~~~~
+LOC  AlphaHelix   ILE   146 -      LYS    155 -                            ~~~~
+LOC  AlphaHelix   GLU   164 -      ARG    183 -                            ~~~~
+LOC  AlphaHelix   LYS   185 -      ASN    194 -                            ~~~~
+LOC  AlphaHelix   ALA   203 -      ASN    221 -                            ~~~~
+LOC  310Helix     VAL    13 -      ASN     15 -                            ~~~~
+LOC  310Helix     ARG   139 -      GLN    141 -                            ~~~~
+LOC  310Helix     VAL   246 -      ASP    248 -                            ~~~~
+LOC  310Helix     GLU   250 -      ASP    252 -                            ~~~~
+LOC  Strand       ILE     9 -      ASP     12 -                            ~~~~
+LOC  Strand       LYS    38 -      CYS     39 -                            ~~~~
+LOC  Strand       ILE    42 -      PRO     43 -                            ~~~~
+LOC  Strand       TYR    54 -      GLN     60 -                            ~~~~
+LOC  Strand       THR    66 -      LYS     72 -                            ~~~~
+LOC  Strand       VAL    78 -      TYR     85 -                            ~~~~
+LOC  Strand       LYS    88 -      ILE     93 -                            ~~~~
+LOC  Strand       ARG   117 -      GLY    119 -                            ~~~~
+LOC  Strand       LEU   144 -      GLY    145 -                            ~~~~
+LOC  Strand       ALA   198 -      PHE    199 -                            ~~~~
+LOC  Strand       ALA   226 -      LYS    234 -                            ~~~~
+LOC  Strand       LYS   240 -      ARG    245 -                            ~~~~
+LOC  TurnI        ASP    34 -      LEU     37 -                            ~~~~
+LOC  TurnIV       LYS    38 -      GLY     41 -                            ~~~~
+LOC  TurnI'       CYS    39 -      ILE     42 -                            ~~~~
+LOC  TurnI        ASN    47 -      LEU     50 -                            ~~~~
+LOC  TurnIV       LEU    50 -      LYS     53 -                            ~~~~
+LOC  TurnI        ASP    61 -      LEU     64 -                            ~~~~
+LOC  TurnI        LYS    72 -      ASN     75 -                            ~~~~
+LOC  TurnIV       ARG    73 -      LEU     76 -                            ~~~~
+LOC  TurnIV       THR    84 -      GLY     87 -                            ~~~~
+LOC  TurnII'      TYR    85 -      LYS     88 -                            ~~~~
+LOC  TurnIV       PHE    94 -      ILE     97 -                            ~~~~
+LOC  TurnIV       ASN   113 -      SER    116 -                            ~~~~
+LOC  TurnIV       PRO   114 -      ARG    117 -                            ~~~~
+LOC  TurnII       ILE   156 -      VAL    159 -                            ~~~~
+LOC  TurnVIII     VAL   159 -      PHE    162 -                            ~~~~
+LOC  TurnI        ASN   194 -      ARG    197 -                            ~~~~
+LOC  TurnIV       ALA   222 -      GLY    225 -                            ~~~~
+LOC  TurnI'       LYS   223 -      ALA    226 -                            ~~~~
+LOC  TurnVIII     LEU   227 -      PRO    230 -                            ~~~~
+LOC  TurnIV       ASN   235 -      GLY    238 -                            ~~~~

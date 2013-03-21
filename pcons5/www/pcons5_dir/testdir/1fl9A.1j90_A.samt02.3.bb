@@ -1,0 +1,92 @@
+REMARK SS CCCEEEEEEEEECCCHHHHH
+REMARK METHOD samt02
+MODEL 3
+PARENT 1J90_A
+REMARK DATE	2001-11-29
+REMARK SCORE	1.2211e-02
+REMARK The numbering of the residue changed to match the
+REMARK correct structure: Fri Apr 11 15:45:20 2003./BW
+SEQRES   1     20  GLU LYS ALA ILE MET VAL TYR LEU ASN GLY ASP LEU GLY 
+SEQRES   2     20  ALA GLY LYS THR THR LEU THR 
+ATOM      1  N   GLU    31      64.288  17.321  36.953
+ATOM      2  CA  GLU    31      64.372  18.736  36.486
+ATOM      3  C   GLU    31      63.248  19.079  35.511
+ATOM      4  O   GLU    31      63.029  20.251  35.190
+ATOM      8  N   LYS    32      62.536  18.057  35.045
+ATOM      9  CA  LYS    32      61.459  18.256  34.080
+ATOM     10  C   LYS    32      60.083  17.940  34.663
+ATOM     11  O   LYS    32      59.907  16.925  35.343
+ATOM     17  N   ALA    33      59.119  18.821  34.403
+ATOM     18  CA  ALA    33      57.728  18.625  34.818
+ATOM     19  C   ALA    33      56.957  17.747  33.836
+ATOM     20  O   ALA    33      57.536  17.245  32.873
+ATOM     24  N   ILE    34      55.662  17.569  34.083
+ATOM     25  CA  ILE    34      54.806  16.784  33.201
+ATOM     26  C   ILE    34      54.941  17.317  31.780
+ATOM     27  O   ILE    34      54.695  18.495  31.524
+ATOM     35  N   MET    35      55.339  16.449  30.859
+ATOM     36  CA  MET    35      55.564  16.869  29.480
+ATOM     37  C   MET    35      54.639  16.202  28.470
+ATOM     38  O   MET    35      54.402  14.994  28.525
+ATOM     42  N   VAL    36      54.129  17.008  27.545
+ATOM     43  CA  VAL    36      53.269  16.526  26.480
+ATOM     44  C   VAL    36      53.928  16.793  25.137
+ATOM     45  O   VAL    36      54.309  17.924  24.834
+ATOM     49  N   TYR    37      54.066  15.742  24.337
+ATOM     50  CA  TYR    37      54.648  15.862  23.009
+ATOM     51  C   TYR    37      53.538  15.869  21.975
+ATOM     52  O   TYR    37      52.709  14.967  21.940
+ATOM     57  N   LEU    38      53.514  16.899  21.141
+ATOM     58  CA  LEU    38      52.522  16.978  20.084
+ATOM     59  C   LEU    38      53.171  16.454  18.824
+ATOM     60  O   LEU    38      54.174  16.999  18.366
+ATOM     65  N   ASN    39      52.614  15.371  18.288
+ATOM     66  CA  ASN    39      53.161  14.726  17.097
+ATOM     67  C   ASN    39      52.141  14.662  15.972
+ATOM     68  O   ASN    39      50.934  14.638  16.205
+ATOM     74  N   GLY    40      52.638  14.621  14.745
+ATOM     75  CA  GLY    40      51.777  14.571  13.582
+ATOM     76  C   GLY    40      52.599  14.695  12.320
+ATOM     77  O   GLY    40      53.776  15.046  12.372
+ATOM     78  N   ASP    41      51.976  14.399  11.185
+ATOM     79  CA  ASP    41      52.639  14.496   9.897
+ATOM     80  C   ASP    41      52.816  15.957   9.534
+ATOM     81  O   ASP    41      52.259  16.842  10.192
+ATOM     86  N   LEU    42      53.602  16.217   8.498
+ATOM     87  CA  LEU    42      53.767  17.580   8.029
+ATOM     88  C   LEU    42      52.405  18.025   7.510
+ATOM     89  O   LEU    42      51.785  17.322   6.717
+ATOM     94  N   GLY    43      51.934  19.177   7.971
+ATOM     95  CA  GLY    43      50.651  19.698   7.538
+ATOM     96  C   GLY    43      49.466  19.137   8.300
+ATOM     97  O   GLY    43      48.362  19.052   7.762
+ATOM     98  N   ALA    44      49.686  18.760   9.555
+ATOM     99  CA  ALA    44      48.616  18.204  10.379
+ATOM    100  C   ALA    44      48.001  19.252  11.296
+ATOM    101  O   ALA    44      47.186  18.932  12.159
+ATOM    104  N   GLY    45      48.411  20.502  11.117
+ATOM    105  CA  GLY    45      47.867  21.599  11.897
+ATOM    106  C   GLY    45      48.451  21.782  13.285
+ATOM    107  O   GLY    45      47.805  22.353  14.153
+ATOM    108  N   LYS    46      49.673  21.309  13.501
+ATOM    109  CA  LYS    46      50.316  21.455  14.802
+ATOM    110  C   LYS    46      50.300  22.894  15.286
+ATOM    111  O   LYS    46      49.843  23.177  16.386
+ATOM    117  N   THR    47      50.816  23.794  14.457
+ATOM    118  CA  THR    47      50.901  25.213  14.797
+ATOM    119  C   THR    47      49.558  25.764  15.227
+ATOM    120  O   THR    47      49.407  26.285  16.332
+ATOM    124  N   THR    48      48.582  25.645  14.337
+ATOM    125  CA  THR    48      47.242  26.128  14.606
+ATOM    126  C   THR    48      46.755  25.608  15.946
+ATOM    127  O   THR    48      46.216  26.361  16.756
+ATOM    131  N   LEU    49      46.966  24.313  16.170
+ATOM    132  CA  LEU    49      46.539  23.642  17.389
+ATOM    133  C   LEU    49      47.277  24.187  18.606
+ATOM    134  O   LEU    49      46.677  24.438  19.650
+ATOM    143  N   THR    50      48.580  24.384  18.463
+ATOM    144  CA  THR    50      49.395  24.885  19.559
+ATOM    145  C   THR    50      49.057  26.313  19.950
+ATOM    146  O   THR    50      49.406  26.761  21.044
+TER     147      THR    50 
+END

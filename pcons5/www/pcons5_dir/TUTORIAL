@@ -1,0 +1,44 @@
+How to set up your local meta-server?
+
+1) be sure that Pcons5 runs with the supplied example files described
+in the README file.
+
+
+2) Pcons5 consists of three modules, a consensus, a structure evaluation
+and a fold recognition score module.
+
+By default the fold recognition score module uses the cutoffs in the
+file "cutoff.init" to estimate the reliability of a score from a
+certain method.
+
+Example:
+kantarell$ head cutoff.init 
+genthreader        0.76400    0.59700    0.58200    0.51800
+test              39.55000   19.12000   11.75000    7.34000
+fmiZ             100.92000   43.36000   20.16000    6.03000
+supfampp         183.37390   58.13556   63.25155    0.13926
+
+Description:
+1st column - method name
+2nd column - 90\% of the models with a score above this value are "very good" 
+3rd column - 50\% of the models with a score above this value are "very good" 
+4th column - 90\% of the models with a score above this value are "good"
+5th column - 50\% of the models with a score above this value are "good"
+
+We used the LGscore as our quality measure, a score above 3 were "very
+good" and 1.5 were "good".
+
+3) If the methods you are using is NOT already in the "cutoff.init"
+file you need to define the four cutoffs described above. This can be
+done using LGscore as we did (on some set of models produce by the
+method) or using some other quality measure like MaxSub with for
+instance 0.5 for "good" and 0.8 for "very good" or you can set your
+own cutoffs based on your own preferences. Be sure that the method
+name is the same as the name in the "REMARK METHOD" field in the PDB
+files.
+
+4) If Pcons5 is run on a method that does not exist in the
+"cutoff.init" file the fold recognition score evalution will be
+skipped and the final score will only be based on the consensus and
+structural evaluation analysis.
+

@@ -1,0 +1,20 @@
+#!/bin/tcsh
+module add blast/2.0.11
+#set psipath = /modules/scientific/psipred
+#set dbname=/afs/pdc.kth.se/home/a/arnee/structpredict/alignments/data/kind-filt.fasta
+set dbname = /afs/pdc.kth.se/home/a/arnee/structpredict/SCOP/scop-1.57/data/nrdb90+scop
+set psipath = /afs/pdc.kth.se/home/a/arnee/MODULES/scientific/psipred/linux
+#set LD_LIBRARY_PATH'="/usr/local/vol/intel-compilers/compiler50/ia32/lib";
+set tempdir = /scratch/
+
+set name = $1:t:r
+
+blastpgp -j 3 -i $1 -d $dbname -Q $tempdir/$name.blast -C $name.chk
+#> logfile
+
+$psipath/bin/psiparse < $tempdir/$name.blast > $tempdir/$name.psi
+$psipath/bin/psipred $psipath/data/weights.dat $tempdir/$name.psi > $tempdir/$name.raw
+rm $name.ss
+$psipath/bin/psipass2 $psipath/data/weights2.dat $tempdir/$name.raw 1.0 1.25 > $name.ss
+#/bin/rm -f $tempdir/$name.psi
+#/bin/rm -f $tempdir/$name.raw

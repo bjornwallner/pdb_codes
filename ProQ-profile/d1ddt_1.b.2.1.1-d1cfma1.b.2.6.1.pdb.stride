@@ -1,0 +1,50 @@
+REM  -------------------- Secondary structure summary -------------------  ~~~~
+REM                                                                        ~~~~
+CHN  /afs/pdc.kth.se/home/b/bjornw/modelling/ -                            ~~~~
+REM                                                                        ~~~~
+REM                .         .         .         .         .               ~~~~
+SEQ  1    SPGHKTQPFLHDGYAVSWNTVEDSIIRTGFQGESGHDIKITAENTPLPIA   50          ~~~~
+STR       TTTT           EE TTTTTTTTTTTTTEEEEEEEEE       B                 ~~~~
+REM                                                                        ~~~~
+REM                .         .         .         .         .               ~~~~
+SEQ  51   GVLLPTIPGKLDVNKSKTHISVNGRKIRMRCRAIDGDVTFCRPKSPVYVG  100          ~~~~
+STR       EEEE   TTTTEE    TTTTTTTT     EETTTT   EEETTTTBTTT               ~~~~
+REM                                                                        ~~~~
+REM                .         .         .         .         .               ~~~~
+SEQ  101  NGVHANLHVAFHRSSSEKIHSNEISSDSIGVLGYQKTVDHTKVNSKLSLF  150          ~~~~
+STR       TTTTTEEEEEEEE    TTTT     EEEEE     TTTT      EEEE               ~~~~
+REM                                                                        ~~~~
+REM                                                                        ~~~~
+SEQ  151  FEIKS                                               155          ~~~~
+STR       E                                                                ~~~~
+REM                                                                        ~~~~
+REM                                                                        ~~~~
+REM                                                                        ~~~~
+LOC  Strand       VAL   396 -      SER    397 -                            ~~~~
+LOC  Strand       GLY   412 -      ILE    420 -                            ~~~~
+LOC  Strand       GLY   431 -      LEU    434 -                            ~~~~
+LOC  Strand       ASP   442 -      VAL    443 -                            ~~~~
+LOC  Strand       CYS   461 -      ARG    462 -                            ~~~~
+LOC  Strand       PHE   470 -      ARG    472 -                            ~~~~
+LOC  Strand       ASN   486 -      ARG    493 -                            ~~~~
+LOC  Strand       ASP   507 -      VAL    511 -                            ~~~~
+LOC  Strand       LEU   527 -      PHE    531 -                            ~~~~
+LOC  TurnII       SER   381 -      HIS    384 -                            ~~~~
+LOC  TurnIV       ASN   399 -      GLU    402 -                            ~~~~
+LOC  TurnVIII     THR   400 -      ASP    403 -                            ~~~~
+LOC  TurnIV       GLU   402 -      ILE    405 -                            ~~~~
+LOC  TurnVIII     ILE   405 -      THR    408 -                            ~~~~
+LOC  TurnII       GLY   409 -      GLY    412 -                            ~~~~
+LOC  TurnII'      PRO   438 -      LEU    441 -                            ~~~~
+LOC  TurnIV       GLY   439 -      ASP    442 -                            ~~~~
+LOC  TurnVIII     THR   448 -      SER    451 -                            ~~~~
+LOC  TurnVIII     VAL   452 -      ARG    455 -                            ~~~~
+LOC  TurnIV       ALA   463 -      GLY    466 -                            ~~~~
+LOC  TurnIV       PRO   473 -      PRO    476 -                            ~~~~
+LOC  TurnIV       VAL   477 -      GLY    480 -                            ~~~~
+LOC  TurnIV       VAL   479 -      GLY    482 -                            ~~~~
+LOC  TurnVIII     GLY   480 -      VAL    483 -                            ~~~~
+LOC  TurnIV       VAL   483 -      ASN    486 -                            ~~~~
+LOC  TurnVIII     HIS   484 -      LEU    487 -                            ~~~~
+LOC  TurnIV       LYS   498 -      SER    501 -                            ~~~~
+LOC  TurnI        THR   517 -      HIS    520 -                            ~~~~

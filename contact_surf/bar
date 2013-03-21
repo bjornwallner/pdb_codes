@@ -1,0 +1,716 @@
+apa.pdb
+Exposed Buried
+0/10 8/80
+0.0000 0.1000
+0/10 5/80
+0.0000 0.0625
+0/10 8/80
+0.0000 0.1000
+9/10 8/80
+0.9000 0.1000
+0/10 47/80
+0.0000 0.5875
+1/10 4/80
+0.1000 0.0500
+ 12   6  10  10  34   8 
+  6   2  10   4  14   6 
+ 10  10   4  16  30  14 
+ 10   4  16  10  36  10 
+ 34  14  30  36  54  16 
+  8   6  14  10  16   0 
+RES: 
+0.039216 0.019608 0.032680 0.032680 0.111111 0.026144 0.006536 0.032680 0.013072 0.045752 0.019608 0.013072 0.052288 0.098039 0.045752 0.032680 0.117647 0.032680 0.176471 0.052288 0.000000 
+1.891914
+Hbond found> 3 50
+Hbond found> 3 52
+Hbond found> 5 7
+Hbond found> 5 52
+Hbond found> 5 54
+Hbond found> 6 9
+Hbond found> 6 10
+Hbond found> 7 5
+Hbond found> 7 10
+Hbond found> 7 54
+Hbond found> 8 54
+Hbond found> 9 6
+Hbond found> 10 6
+Hbond found> 10 7
+Hbond found> 11 14
+Hbond found> 11 15
+Hbond found> 12 15
+Hbond found> 12 16
+Hbond found> 13 17
+Hbond found> 14 11
+Hbond found> 14 17
+Hbond found> 14 18
+Hbond found> 15 11
+Hbond found> 15 12
+Hbond found> 15 18
+Hbond found> 15 19
+Hbond found> 16 12
+Hbond found> 16 19
+Hbond found> 16 20
+Hbond found> 17 13
+Hbond found> 17 14
+Hbond found> 17 20
+Hbond found> 17 21
+Hbond found> 18 14
+Hbond found> 18 15
+Hbond found> 18 21
+Hbond found> 18 22
+Hbond found> 19 15
+Hbond found> 19 16
+Hbond found> 19 22
+Hbond found> 19 23
+Hbond found> 20 16
+Hbond found> 20 17
+Hbond found> 20 23
+Hbond found> 20 24
+Hbond found> 21 17
+Hbond found> 21 18
+Hbond found> 21 24
+Hbond found> 21 25
+Hbond found> 22 18
+Hbond found> 22 19
+Hbond found> 22 25
+Hbond found> 22 26
+Hbond found> 23 19
+Hbond found> 23 20
+Hbond found> 23 27
+Hbond found> 24 20
+Hbond found> 24 21
+Hbond found> 25 21
+Hbond found> 25 22
+Hbond found> 26 22
+Hbond found> 27 23
+Hbond found> 28 38
+Hbond found> 31 38
+Hbond found> 33 36
+Hbond found> 34 258
+Hbond found> 34 259
+Hbond found> 34 260
+Hbond found> 35 259
+Hbond found> 36 33
+Hbond found> 37 250
+Hbond found> 38 28
+Hbond found> 38 31
+Hbond found> 39 250
+Hbond found> 41 44
+Hbond found> 44 41
+Hbond found> 47 67
+Hbond found> 49 65
+Hbond found> 50 3
+Hbond found> 51 63
+Hbond found> 52 3
+Hbond found> 52 5
+Hbond found> 53 61
+Hbond found> 54 5
+Hbond found> 54 7
+Hbond found> 54 8
+Hbond found> 55 58
+Hbond found> 55 59
+Hbond found> 58 55
+Hbond found> 59 55
+Hbond found> 61 53
+Hbond found> 62 76
+Hbond found> 63 51
+Hbond found> 64 73
+Hbond found> 64 74
+Hbond found> 65 49
+Hbond found> 65 67
+Hbond found> 66 70
+Hbond found> 66 71
+Hbond found> 67 47
+Hbond found> 67 65
+Hbond found> 70 66
+Hbond found> 71 66
+Hbond found> 73 64
+Hbond found> 73 88
+Hbond found> 74 64
+Hbond found> 75 86
+Hbond found> 76 62
+Hbond found> 77 84
+Hbond found> 79 81
+Hbond found> 79 82
+Hbond found> 81 79
+Hbond found> 82 79
+Hbond found> 83 110
+Hbond found> 83 112
+Hbond found> 84 77
+Hbond found> 85 112
+Hbond found> 85 114
+Hbond found> 86 75
+Hbond found> 87 116
+Hbond found> 88 73
+Hbond found> 88 91
+Hbond found> 89 116
+Hbond found> 89 118
+Hbond found> 90 92
+Hbond found> 91 88
+Hbond found> 92 90
+Hbond found> 92 94
+Hbond found> 93 96
+Hbond found> 93 97
+Hbond found> 94 92
+Hbond found> 95 99
+Hbond found> 96 93
+Hbond found> 96 99
+Hbond found> 96 100
+Hbond found> 97 93
+Hbond found> 97 100
+Hbond found> 97 101
+Hbond found> 98 101
+Hbond found> 98 102
+Hbond found> 99 95
+Hbond found> 99 96
+Hbond found> 99 103
+Hbond found> 100 96
+Hbond found> 100 97
+Hbond found> 100 104
+Hbond found> 101 97
+Hbond found> 101 98
+Hbond found> 101 105
+Hbond found> 102 98
+Hbond found> 102 106
+Hbond found> 103 99
+Hbond found> 104 100
+Hbond found> 105 101
+Hbond found> 106 102
+Hbond found> 110 83
+Hbond found> 112 83
+Hbond found> 112 85
+Hbond found> 114 85
+Hbond found> 116 87
+Hbond found> 116 89
+Hbond found> 118 89
+Hbond found> 121 124
+Hbond found> 121 125
+Hbond found> 122 125
+Hbond found> 122 126
+Hbond found> 123 126
+Hbond found> 123 127
+Hbond found> 124 121
+Hbond found> 124 127
+Hbond found> 124 128
+Hbond found> 125 121
+Hbond found> 125 122
+Hbond found> 125 128
+Hbond found> 125 129
+Hbond found> 126 122
+Hbond found> 126 123
+Hbond found> 126 129
+Hbond found> 126 130
+Hbond found> 126 131
+Hbond found> 127 123
+Hbond found> 127 124
+Hbond found> 127 130
+Hbond found> 128 124
+Hbond found> 128 125
+Hbond found> 129 125
+Hbond found> 129 126
+Hbond found> 130 126
+Hbond found> 130 127
+Hbond found> 131 126
+Hbond found> 132 135
+Hbond found> 132 136
+Hbond found> 133 136
+Hbond found> 135 132
+Hbond found> 136 132
+Hbond found> 136 133
+Hbond found> 138 193
+Hbond found> 139 142
+Hbond found> 139 143
+Hbond found> 140 144
+Hbond found> 141 145
+Hbond found> 142 139
+Hbond found> 142 145
+Hbond found> 142 146
+Hbond found> 143 139
+Hbond found> 143 146
+Hbond found> 143 147
+Hbond found> 144 140
+Hbond found> 144 147
+Hbond found> 145 141
+Hbond found> 145 142
+Hbond found> 145 148
+Hbond found> 145 149
+Hbond found> 146 142
+Hbond found> 146 143
+Hbond found> 146 149
+Hbond found> 147 143
+Hbond found> 147 144
+Hbond found> 147 150
+Hbond found> 147 151
+Hbond found> 148 145
+Hbond found> 149 145
+Hbond found> 149 146
+Hbond found> 150 147
+Hbond found> 150 152
+Hbond found> 150 153
+Hbond found> 151 147
+Hbond found> 152 150
+Hbond found> 153 150
+Hbond found> 157 160
+Hbond found> 157 161
+Hbond found> 158 161
+Hbond found> 158 162
+Hbond found> 159 163
+Hbond found> 160 157
+Hbond found> 160 164
+Hbond found> 161 157
+Hbond found> 161 158
+Hbond found> 161 164
+Hbond found> 161 165
+Hbond found> 162 158
+Hbond found> 162 165
+Hbond found> 162 166
+Hbond found> 163 159
+Hbond found> 163 166
+Hbond found> 163 167
+Hbond found> 164 160
+Hbond found> 164 161
+Hbond found> 164 167
+Hbond found> 164 168
+Hbond found> 165 161
+Hbond found> 165 162
+Hbond found> 165 168
+Hbond found> 165 169
+Hbond found> 166 162
+Hbond found> 166 163
+Hbond found> 166 170
+Hbond found> 167 163
+Hbond found> 167 164
+Hbond found> 167 170
+Hbond found> 167 171
+Hbond found> 168 164
+Hbond found> 168 165
+Hbond found> 168 171
+Hbond found> 168 172
+Hbond found> 169 165
+Hbond found> 169 172
+Hbond found> 169 173
+Hbond found> 169 174
+Hbond found> 170 166
+Hbond found> 170 167
+Hbond found> 170 175
+Hbond found> 171 167
+Hbond found> 171 168
+Hbond found> 172 168
+Hbond found> 172 169
+Hbond found> 172 176
+Hbond found> 173 169
+Hbond found> 173 176
+Hbond found> 173 177
+Hbond found> 174 169
+Hbond found> 174 177
+Hbond found> 174 178
+Hbond found> 175 170
+Hbond found> 175 178
+Hbond found> 176 172
+Hbond found> 176 173
+Hbond found> 177 173
+Hbond found> 177 174
+Hbond found> 177 248
+Hbond found> 177 249
+Hbond found> 178 174
+Hbond found> 178 175
+Hbond found> 178 181
+Hbond found> 178 182
+Hbond found> 179 182
+Hbond found> 179 183
+Hbond found> 179 246
+Hbond found> 180 183
+Hbond found> 180 184
+Hbond found> 180 246
+Hbond found> 181 178
+Hbond found> 181 184
+Hbond found> 181 185
+Hbond found> 182 178
+Hbond found> 182 179
+Hbond found> 182 185
+Hbond found> 182 186
+Hbond found> 183 179
+Hbond found> 183 180
+Hbond found> 183 186
+Hbond found> 183 187
+Hbond found> 184 180
+Hbond found> 184 181
+Hbond found> 184 187
+Hbond found> 184 188
+Hbond found> 185 181
+Hbond found> 185 182
+Hbond found> 185 188
+Hbond found> 185 189
+Hbond found> 186 182
+Hbond found> 186 183
+Hbond found> 186 189
+Hbond found> 187 183
+Hbond found> 187 184
+Hbond found> 188 184
+Hbond found> 188 185
+Hbond found> 188 191
+Hbond found> 189 185
+Hbond found> 189 186
+Hbond found> 191 188
+Hbond found> 193 138
+Hbond found> 194 196
+Hbond found> 196 194
+Hbond found> 196 199
+Hbond found> 196 200
+Hbond found> 197 201
+Hbond found> 198 201
+Hbond found> 198 202
+Hbond found> 199 196
+Hbond found> 199 202
+Hbond found> 199 203
+Hbond found> 200 196
+Hbond found> 200 203
+Hbond found> 200 204
+Hbond found> 201 197
+Hbond found> 201 198
+Hbond found> 201 204
+Hbond found> 201 205
+Hbond found> 202 198
+Hbond found> 202 199
+Hbond found> 202 205
+Hbond found> 202 206
+Hbond found> 203 199
+Hbond found> 203 200
+Hbond found> 204 200
+Hbond found> 204 201
+Hbond found> 205 201
+Hbond found> 205 202
+Hbond found> 205 208
+Hbond found> 205 209
+Hbond found> 206 202
+Hbond found> 206 210
+Hbond found> 207 210
+Hbond found> 207 211
+Hbond found> 208 205
+Hbond found> 208 211
+Hbond found> 208 212
+Hbond found> 209 205
+Hbond found> 209 212
+Hbond found> 209 213
+Hbond found> 210 206
+Hbond found> 210 207
+Hbond found> 210 214
+Hbond found> 211 207
+Hbond found> 211 208
+Hbond found> 211 214
+Hbond found> 211 215
+Hbond found> 212 208
+Hbond found> 212 209
+Hbond found> 212 215
+Hbond found> 212 216
+Hbond found> 213 209
+Hbond found> 214 210
+Hbond found> 214 211
+Hbond found> 215 211
+Hbond found> 215 212
+Hbond found> 215 217
+Hbond found> 216 212
+Hbond found> 217 215
+Hbond found> 217 220
+Hbond found> 219 240
+Hbond found> 220 217
+Hbond found> 220 222
+Hbond found> 221 238
+Hbond found> 222 220
+Hbond found> 225 237
+Hbond found> 227 235
+Hbond found> 229 232
+Hbond found> 229 233
+Hbond found> 232 229
+Hbond found> 233 229
+Hbond found> 235 227
+Hbond found> 237 225
+Hbond found> 238 221
+Hbond found> 239 242
+Hbond found> 240 219
+Hbond found> 240 243
+Hbond found> 240 244
+Hbond found> 242 239
+Hbond found> 243 240
+Hbond found> 243 245
+Hbond found> 243 246
+Hbond found> 244 240
+Hbond found> 244 247
+Hbond found> 245 243
+Hbond found> 246 179
+Hbond found> 246 180
+Hbond found> 246 243
+Hbond found> 247 244
+Hbond found> 248 177
+Hbond found> 249 177
+Hbond found> 250 37
+Hbond found> 250 39
+Hbond found> 251 253
+Hbond found> 253 251
+Hbond found> 257 259
+Hbond found> 258 34
+Hbond found> 259 34
+Hbond found> 259 35
+Hbond found> 259 257
+Hbond found> 260 34
+ILE C 
+ASN C 
+THR E 
+ILE E 
+THR E 
+PHE E 
+ASP E 
+VAL H E 
+GLY H E 
+ASN H E 
+ALA H E 
+THR E 
+ILE H E 
+ASN H E 
+LYS H E 
+TYR H E 
+ALA H E 
+THR H E 
+PHE H E 
+MET H E 
+LYS H E 
+SER H E 
+ILE H E 
+HIS H E 
+ASN H E 
+GLN H E 
+ALA H E 
+LYS E 
+ASP E 
+PRO E 
+THR E 
+LEU E 
+LYS E 
+CYS E 
+TYR E 
+GLY E 
+ILE E 
+PRO E 
+MET E 
+LEU E 
+PRO E 
+ASN E 
+THR E 
+ASN E 
+LEU E 
+THR E 
+PRO E 
+LYS E 
+TYR E 
+LEU E 
+LEU E 
+VAL E 
+THR E 
+LEU E 
+GLN E 
+ASP E 
+SER E 
+SER E 
+LEU E 
+LYS E 
+THR E 
+ILE E 
+THR E 
+LEU E 
+MET E 
+LEU E 
+LYS E 
+ARG E 
+ASN E 
+ASN E 
+LEU E 
+TYR E 
+VAL E 
+MET E 
+GLY E 
+TYR E 
+ALA E 
+ASP E 
+THR E 
+TYR E 
+ASN E 
+GLY E 
+LYS E 
+CYS E 
+ARG E 
+TYR E 
+HIS E 
+ILE E 
+PHE E 
+LYS E 
+ASP E 
+ILE E 
+SER E 
+ASN E 
+THR E 
+THR E 
+GLU H E 
+ARG H E 
+ASN H E 
+ASP H E 
+VAL H E 
+MET H E 
+THR H E 
+THR H E 
+LEU H E 
+CYS H E 
+PRO E 
+ASN E 
+PRO E 
+SER E 
+SER E 
+ARG E 
+VAL E 
+GLY E 
+LYS E 
+ASN E 
+ILE E 
+ASN E 
+TYR E 
+ASP E 
+SER E 
+SER E 
+TYR H E 
+PRO H E 
+ALA H E 
+LEU H E 
+GLU H E 
+LYS H E 
+LYS H E 
+VAL H E 
+GLY H E 
+ARG E 
+PRO E 
+ARG H E 
+SER H E 
+GLN H E 
+VAL H E 
+GLN E 
+LEU E 
+GLY E 
+ILE H E 
+GLN H E 
+ILE H E 
+LEU H E 
+ASN H E 
+SER H E 
+GLY H E 
+ILE H E 
+GLY H E 
+LYS H E 
+ILE H E 
+TYR E 
+GLY E 
+VAL E 
+ASP E 
+SER E 
+PHE E 
+THR E 
+GLU H E 
+LYS H E 
+THR H E 
+GLU H E 
+ALA H E 
+GLU H E 
+PHE H E 
+LEU H E 
+LEU H E 
+VAL H E 
+ALA H E 
+ILE H E 
+GLN H E 
+MET H E 
+VAL H E 
+SER H E 
+GLU H E 
+ALA H E 
+ALA H E 
+ARG H E 
+PHE H E 
+LYS H E 
+TYR H E 
+ILE H E 
+GLU H E 
+ASN H E 
+GLN H E 
+VAL H E 
+LYS H E 
+THR H E 
+ASN H E 
+PHE H E 
+ASN E 
+ARG E 
+ALA E 
+PHE E 
+TYR E 
+PRO E 
+ASN E 
+ALA H E 
+LYS H E 
+VAL H E 
+LEU H E 
+ASN H E 
+LEU H E 
+GLU H E 
+GLU H E 
+SER H E 
+TRP H E 
+GLY H E 
+LYS H E 
+ILE H E 
+SER H E 
+THR H E 
+ALA H E 
+ILE H E 
+HIS H E 
+ASN H E 
+ALA E 
+LYS E 
+ASN E 
+GLY E 
+ALA E 
+LEU E 
+THR E 
+SER E 
+PRO E 
+LEU E 
+GLU E 
+LEU E 
+LYS E 
+ASN E 
+ALA E 
+ASN E 
+GLY E 
+SER E 
+LYS E 
+TRP E 
+ILE E 
+VAL E 
+LEU E 
+ARG E 
+VAL H E 
+ASP H E 
+ASP H E 
+ILE H E 
+GLU H E 
+PRO H E 
+ASP H E 
+VAL H E 
+GLY E 
+LEU E 
+LEU E 
+LYS E 
+TYR E 
+VAL E 
+ASN E 
+GLY E 
+THR E 
+CYS E 
+GLN E 
+ALA E 
+THR E 

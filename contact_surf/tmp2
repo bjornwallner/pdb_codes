@@ -1,0 +1,70 @@
+helix.pdb
+Exposed Buried
+1/7 0/0
+0.1429   nan
+0/7 0/0
+0.0000   nan
+1/7 0/0
+0.1429   nan
+2/7 0/0
+0.2857   nan
+1/7 0/0
+0.1429   nan
+2/7 0/0
+0.2857   nan
+  0   0   0   0   0   0 
+  0   0   0   0   0   2 
+  0   0   0   0   0   0 
+  0   0   0   0   0   0 
+  0   0   0   0   0   0 
+  0   2   0   0   0   0 
+RES: 
+0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 
+3.436522
+Hbond found> 0 1
+Hbond found> 1 3
+Hbond found> 1 4
+Hbond found> 1 5
+Hbond found> 2 4
+Hbond found> 2 5
+Hbond found> 2 6
+Hbond found> 3 5
+Hbond found> 3 6
+Hbond found> 3 7
+Hbond found> 4 7
+Hbond found> 4 8
+Hbond found> 5 7
+Hbond found> 5 8
+Hbond found> 5 9
+Hbond found> 6 8
+Hbond found> 6 9
+Hbond found> 6 10
+Hbond found> 7 9
+Hbond found> 7 10
+Hbond found> 8 10
+Hbond found> 10 11
+Hbond found> 11 12
+2 2
+2 3
+2 4
+2 5
+3 3
+3 4
+3 5
+3 6
+4 4
+4 5
+4 6
+4 7
+5 5
+5 6
+5 7
+5 8
+6 6
+6 7
+6 8
+6 9
+7 7
+7 8
+7 9
+7 10
