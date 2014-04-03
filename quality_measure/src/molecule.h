@@ -5,8 +5,8 @@
 #include <linux/limits.h>
 #define TRUE		1		/* Boolean definitions */
 #define FALSE		0
-#define	MAXATMS		10000		/* Maximum allowable atoms */
-#define	MAXRES		2000	        /* Maximum allowable residues */
+#define	MAXATMS		100000		/* Maximum allowable atoms */
+#define	MAXRES		10000	        /* Maximum allowable residues */
 #define PI		3.14159265	/* Useful constant */
 #undef max
 #define max(a,b)    ((a) > (b) ? (a) : (b))
