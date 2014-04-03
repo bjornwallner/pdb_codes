@@ -5,8 +5,8 @@
 #include <math.h>
 #include <sys/times.h>
 #include <time.h>
-#include "/afs/pdc.kth.se/home/b/bjornw/bjorn/source/c/pdb/molecule.h"
-#include "/afs/pdc.kth.se/home/b/bjornw/bjorn/source/c/pdb/quality_measure/lgscore.h"
+#include "src/molecule.h"
+#include "lgscore.h"
 #include <unistd.h>
 
 //#include "/afs/pdc.kth.se/home/b/bjornw/bjorn/source/c/pdb/quality_molecule.h"

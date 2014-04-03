@@ -172,7 +172,11 @@ main(argc,argv)		/* Main routine */
 			{
 			  //  printf("%d (%d) ",m[0].atm[m[0].CA_ref[j]].resnum,j+1);
 			  //		      printf("%d ",j+1);
-			  printf("%d ",m[0].atm[m[0].CA_ref[j]].resnum);
+			  chain_name=m[0].atm[m[0].CA_ref[j]].chain[0];
+			  if(chain_name == ' ') {
+			    chain_name='_';
+			  }
+			  printf("%d%c ",m[0].atm[m[0].CA_ref[j]].resnum,chain_name);
 			  // if(first==0)
 			  //   {
 			  //     printf("[%d",j+1);

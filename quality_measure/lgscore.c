@@ -26,8 +26,8 @@
 #include <math.h> 
 #include <stdlib.h>
 #include <string.h>
-#include "/afs/pdc.kth.se/home/b/bjornw/bjorn/source/c/pdb/molecule.h"
-#include "/afs/pdc.kth.se/home/b/bjornw/bjorn/source/c/pdb/quality_measure/lgscore.h"
+#include "src/molecule.h"
+#include "lgscore.h"
 
 double LGscore(char *file1,char *file2,double minsim,int L, double factor)
 {
