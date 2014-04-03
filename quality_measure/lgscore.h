@@ -5,7 +5,7 @@
 #undef min
 #define min(a,b)    ((a) < (b) ? (a) : (b))
 
-#define	MAXRES		2000	        /* Maximum allowable residues */
+#define	MAXRES		10000	        /* Maximum allowable residues */
 
 typedef struct
 {
