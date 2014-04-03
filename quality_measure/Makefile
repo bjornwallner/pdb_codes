@@ -4,7 +4,7 @@ LGSCORE=lgscore.o molecule.o main.o src/nrutil.c src/jacobi.c  src/eigsrt.c src/
 GOAL=Sscore
 SCORE=$(GOAL)
 SSCORE =-D$(SCORE)
-ARCH = $(shell uname -m)
+ARCH = $(shell hostname)
 LFLAG=-O3 -funroll-loops -Isrc/ $(SSCORE)
 
 #-fbranch-probabilities #-fprofile-arcs #-finline-functions #-fomit-frame-pointer -ffast-math -funroll-loops # -fprofile-arcs
