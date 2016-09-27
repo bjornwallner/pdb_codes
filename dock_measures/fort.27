@@ -1,0 +1,340 @@
+load pdb native_fixed.pdb                                                                
+ wireframe off
+ ribbon
+ color chain
+select 171 and :D and *.ca
+spacefill
+ color white
+select 570 and :F and *.ca
+spacefill
+ color white
+select 188 and :D and *.ca
+spacefill
+ color white
+select 569 and :F and *.ca
+spacefill
+ color white
+select 189 and :D and *.ca
+spacefill
+ color white
+select 570 and :F and *.ca
+spacefill
+ color white
+select 191 and :D and *.ca
+spacefill
+ color white
+select 570 and :F and *.ca
+spacefill
+ color white
+select 192 and :D and *.ca
+spacefill
+ color white
+select 570 and :F and *.ca
+spacefill
+ color white
+select 192 and :D and *.ca
+spacefill
+ color white
+select 574 and :F and *.ca
+spacefill
+ color white
+select 193 and :D and *.ca
+spacefill
+ color white
+select 570 and :F and *.ca
+spacefill
+ color white
+select 193 and :D and *.ca
+spacefill
+ color white
+select 574 and :F and *.ca
+spacefill
+ color white
+select 194 and :D and *.ca
+spacefill
+ color white
+select 533 and :F and *.ca
+spacefill
+ color white
+select 194 and :D and *.ca
+spacefill
+ color white
+select 534 and :F and *.ca
+spacefill
+ color white
+select 194 and :D and *.ca
+spacefill
+ color white
+select 571 and :F and *.ca
+spacefill
+ color white
+select 194 and :D and *.ca
+spacefill
+ color white
+select 574 and :F and *.ca
+spacefill
+ color white
+select 195 and :D and *.ca
+spacefill
+ color white
+select 534 and :F and *.ca
+spacefill
+ color white
+select 207 and :D and *.ca
+spacefill
+ color white
+select 656 and :F and *.ca
+spacefill
+ color white
+select 209 and :D and *.ca
+spacefill
+ color white
+select 655 and :F and *.ca
+spacefill
+ color white
+select 209 and :D and *.ca
+spacefill
+ color white
+select 656 and :F and *.ca
+spacefill
+ color white
+select 218 and :D and *.ca
+spacefill
+ color white
+select 439 and :F and *.ca
+spacefill
+ color white
+select 218 and :D and *.ca
+spacefill
+ color white
+select 534 and :F and *.ca
+spacefill
+ color white
+select 218 and :D and *.ca
+spacefill
+ color white
+select 535 and :F and *.ca
+spacefill
+ color white
+select 219 and :D and *.ca
+spacefill
+ color white
+select 439 and :F and *.ca
+spacefill
+ color white
+select 219 and :D and *.ca
+spacefill
+ color white
+select 535 and :F and *.ca
+spacefill
+ color white
+select 220 and :D and *.ca
+spacefill
+ color white
+select 534 and :F and *.ca
+spacefill
+ color white
+select 220 and :D and *.ca
+spacefill
+ color white
+select 535 and :F and *.ca
+spacefill
+ color white
+select 220 and :D and *.ca
+spacefill
+ color white
+select 538 and :F and *.ca
+spacefill
+ color white
+select 222 and :D and *.ca
+spacefill
+ color white
+select 574 and :F and *.ca
+spacefill
+ color white
+select 225 and :D and *.ca
+spacefill
+ color white
+select 655 and :F and *.ca
+spacefill
+ color white
+select 228 and :D and *.ca
+spacefill
+ color white
+select 655 and :F and *.ca
+spacefill
+ color white
+select 229 and :D and *.ca
+spacefill
+ color white
+select 573 and :F and *.ca
+spacefill
+ color white
+select 230 and :D and *.ca
+spacefill
+ color white
+select 573 and :F and *.ca
+spacefill
+ color white
+select 230 and :D and *.ca
+spacefill
+ color white
+select 605 and :F and *.ca
+spacefill
+ color white
+select 230 and :D and *.ca
+spacefill
+ color white
+select 606 and :F and *.ca
+spacefill
+ color white
+select 230 and :D and *.ca
+spacefill
+ color white
+select 607 and :F and *.ca
+spacefill
+ color white
+select 230 and :D and *.ca
+spacefill
+ color white
+select 653 and :F and *.ca
+spacefill
+ color white
+select 231 and :D and *.ca
+spacefill
+ color white
+select 607 and :F and *.ca
+spacefill
+ color white
+select 231 and :D and *.ca
+spacefill
+ color white
+select 652 and :F and *.ca
+spacefill
+ color white
+select 231 and :D and *.ca
+spacefill
+ color white
+select 653 and :F and *.ca
+spacefill
+ color white
+select 231 and :D and *.ca
+spacefill
+ color white
+select 655 and :F and *.ca
+spacefill
+ color white
+select 232 and :D and *.ca
+spacefill
+ color white
+select 542 and :F and *.ca
+spacefill
+ color white
+select 232 and :D and *.ca
+spacefill
+ color white
+select 573 and :F and *.ca
+spacefill
+ color white
+select 232 and :D and *.ca
+spacefill
+ color white
+select 574 and :F and *.ca
+spacefill
+ color white
+select 232 and :D and *.ca
+spacefill
+ color white
+select 577 and :F and *.ca
+spacefill
+ color white
+select 233 and :D and *.ca
+spacefill
+ color white
+select 542 and :F and *.ca
+spacefill
+ color white
+select 233 and :D and *.ca
+spacefill
+ color white
+select 577 and :F and *.ca
+spacefill
+ color white
+select 234 and :D and *.ca
+spacefill
+ color white
+select 577 and :F and *.ca
+spacefill
+ color white
+select 235 and :D and *.ca
+spacefill
+ color white
+select 537 and :F and *.ca
+spacefill
+ color white
+select 235 and :D and *.ca
+spacefill
+ color white
+select 574 and :F and *.ca
+spacefill
+ color white
+select 235 and :D and *.ca
+spacefill
+ color white
+select 577 and :F and *.ca
+spacefill
+ color white
+select 237 and :D and *.ca
+spacefill
+ color white
+select 441 and :F and *.ca
+spacefill
+ color white
+select 237 and :D and *.ca
+spacefill
+ color white
+select 442 and :F and *.ca
+spacefill
+ color white
+select 237 and :D and *.ca
+spacefill
+ color white
+select 443 and :F and *.ca
+spacefill
+ color white
+select 237 and :D and *.ca
+spacefill
+ color white
+select 444 and :F and *.ca
+spacefill
+ color white
+select 237 and :D and *.ca
+spacefill
+ color white
+select 537 and :F and *.ca
+spacefill
+ color white
+select 237 and :D and *.ca
+spacefill
+ color white
+select 538 and :F and *.ca
+spacefill
+ color white
+select 238 and :D and *.ca
+spacefill
+ color white
+select 441 and :F and *.ca
+spacefill
+ color white
+select 239 and :D and *.ca
+spacefill
+ color white
+select 441 and :F and *.ca
+spacefill
+ color white
+select 240 and :D and *.ca
+spacefill
+ color white
+select 441 and :F and *.ca
+spacefill
+ color white

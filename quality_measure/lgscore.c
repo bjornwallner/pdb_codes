@@ -1734,13 +1734,13 @@ int check_molecules(m1,m2)
       if(!atom_exist(m1->atm[i].name,m1->atm[i].resname,m2))
 	{
 	  //delete_atom(m1,i);
-	  //printf("NO m1: %d %s %s %d \"%s\"\n",
-	  //	 i,
-	  //	 m1->atm[i].name,
-	  //	 m1->atm[i].residue,
-	  //	 m1->atm[i].resnum,
-	  //	 m1->atm[i].resname);
-		 
+	  /*printf("NO m1: %d %s %s %d \"%s\"\n",
+	  	 i,
+		 m1->atm[i].name,
+	  	 m1->atm[i].residue,
+	  	 m1->atm[i].resnum,
+	  	 m1->atm[i].resname);
+	  */	 
 	  delete_atom(m1,i);
 	}
       else
@@ -1756,7 +1756,7 @@ int check_molecules(m1,m2)
     {
       if(!atom_exist(m2->atm[i].name,m2->atm[i].resname,m1))
 	{
-	  //  printf("NO m2: %s %s %d %d %d\n",m2->atm[i].name,m2->atm[i].residue,i,m2->atm[i].resnum,m1->atm[i].resnum);
+	  //printf("NO m2: %s %s %d %d %d\n",m2->atm[i].name,m2->atm[i].residue,i,m2->atm[i].resnum,m1->atm[i].resnum);
 	  delete_atom(m2,i);
 	  //printf("NO m2: %s %s %d %d %d\n",m2->atm[i].name,m2->atm[i].residue,i,m2->atm[i].resnum,m1->atm[i].resnum);
 	  //printf("YES m2: %s %s %d %d %d\n",m2->atm[i].name,m2->atm[i].residue,i,m2->atm[i].resnum,m1->atm[i].resnum);
@@ -1804,7 +1804,7 @@ int check_molecules(m1,m2)
   
   if (m1->atoms > 0){return(0);}
   else{
-    //fprintf(stderr,"no identical atoms in files %s %s \n",m1->filename,m2->filename);
+    fprintf(stderr,"ERROR: no identical atoms in files %s %s \n",m1->filename,m2->filename);
     return(1);
   }
 }
@@ -1923,9 +1923,11 @@ int atom_selected(char* name,char* resname,molecule* m)
 int atom_exist(char* name,char* resname,molecule* m)
 {
   int i;
+  //  printf("num: %d\n",m->atoms);
   for(i=0;i<m->atoms;i++)
     {
-      if(strcmp(name,m->atm[i].name)==0 && strcmp(m->atm[i].resname,resname)==0)
+      //    printf("%s %s %s %s",name,m->atm[i].name,resname,m->atm[i].resname);
+      if(strcmp(name,m->atm[i].name)==0 && strcmp(m->atm[i].resname,resname)==0) 
 	return TRUE;
     }
   return FALSE;

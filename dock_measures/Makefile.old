@@ -1,0 +1,16 @@
+CONTACT_MAP=molecule.o contact_map.o /afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/nrutil.c /afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/jacobi.c /afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/eigsrt.c /afs/pdc.kth.se/home/b/bjornw/bjorn/source/c/nets/nets.c	
+
+CCFLAG=-I /afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/ 
+LFLAG=-lm -O3 -funroll-loops 
+
+
+contact_map: $(CONTACT_MAP)
+	$(CC) $(LFLAG) -o contact_map $(CONTACT_MAP)
+
+molecule.o: molecule.c molecule.h 
+	$(CC) $(LFLAG) $(CCFLAG) -c molecule.c
+
+.c.o:	
+	$(CC) -c $(LFLAG) $(CCFLAG)  $*.c
+
+

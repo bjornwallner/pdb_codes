@@ -3,12 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include "molecule.h"
-//#include "/afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/nr.h"
-//#include "/afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/nrutil.h"
-//#include "/afs/pdc.kth.se/home/b/bjornw/bjorn/source/c/nets/nets.h"
-#include "nr.h"
-#include "nrutil.h"
-#include "nets.h"
+#include "/afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/nr.h"
+#include "/afs/pdc.kth.se/home/b/bjornw/bjorn/modules/numrecipies/nrutil.h"
+#include "/afs/pdc.kth.se/home/b/bjornw/bjorn/source/c/nets/nets.h"
 
 
 /* changed input to (molecule *m,char atomflag)
@@ -17,13 +14,13 @@
    atomflag == b -> backbone CA,C,N,O atoms
 */
 
-int read_molecules_dynamic(dyn_molecule *m,char atomflag,int *ignore_res)	/* Reads in molecules to be superimposed */
+int read_molecules_dynamic(dyn_molecule *m,char atomflag)	/* Reads in molecules to be superimposed */
 {
   int	i,j,k,atoms,residues;	/* Counter variables */
-  char	buff[3000];	/* Input string */
-  char	temp[3000];	/* Throwaway string */
-  char	line_flag[3000];	/* PDB file line mode */
-  char  desc_flag[3000];
+  char	buff[1200];	/* Input string */
+  char	temp[1000];	/* Throwaway string */
+  char	line_flag[11];	/* PDB file line mode */
+  char  desc_flag[20];
   char	residue[4];	/* PDB atom info for output */
   char	name[4];
   int   resnum;
@@ -66,9 +63,6 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag,int *ignore_res)	/* Rea
   m[0].method='\0';
   m[0].atm='\0';
   m[0].CA_ref='\0';
-  m[0].residues=0;
-  m[0].atoms=0;
-  
   if (fp!=NULL)	/* If yes, read in coordinates */
     {
       /* Initialize things */
@@ -85,8 +79,6 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag,int *ignore_res)	/* Rea
 	  //sscanf(buff,"%-6s %4d  %-3s%1s%3s %1s%5s    %7.3lf %7.3lf %7.3lf",line_flag,&number,name,residue,chain,&resnum,inscode,&x,&y,&z);
 	  //sscanf(buff,"%s %d %s %s %s",line_flag,&number,name,residue,resname);
 	  strcpy(line_flag,"undef");
-	  strcpy(desc_flag,"undef");
-	  strcpy(temp,"undef");
 	  sscanf(buff,"%s",line_flag);
 	  // printf("%s %s %s",m[0].filename,line_flag,&buff);
 	  if(strcmp("REMARK",line_flag)==0)
@@ -145,68 +137,63 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag,int *ignore_res)	/* Rea
 	      
 	      //printf("test: %s %d %s %s %s %s %d %s %lf %lf %lf\n",line_flag,number,name,alt_loc,residue,chain,resnum,resname,x,y,z);
 	      //if (strcmp("N",name)==0)	   /*  Is it an N atom => new residue? */
-		  //printf("%s %d %d\n",m[0].filename,resnum,ignore_res[resnum]);
-		  //		  printf("%d %d\n",residues,ignore_res[0]); 
-		  if(ignore_res[resnum]!=1) 
+	      //printf("%s %s\n",old_resname,resname);
+		  if(strcmp(old_resname,resname)!=0)
 		    {
-		    if(strcmp(old_resname,resname)!=0)
-		      {
-			m[0].sequence=realloc(m[0].sequence,sizeof(char)*(residues+1));
-			//m[0].sequence=malloc(sizeof(char)*2000);
-			m[0].sequence[residues]=aa321(residue);
-			residues++;
-			strcpy(alt_loc_check,alt_loc);
-		      }
-		    //sscanf(&buff[22],"%d %lf %lf %lf",&resnum,&x,&y,&z);
-		    //printf("test %d %s %s %d %lf %lf %lf\n",number,name,residue,resnum,x,y,z);
-		    if(strcmp(alt_loc_check,alt_loc)==0)
-		      {
-			//printf("test: %s %s",m[0].filename,&buff);
-			m[0].atm=realloc(m[0].atm,sizeof(atm)*(atoms+1));
-			m[0].atm[atoms].x=x;
-			m[0].atm[atoms].y=y;
-			m[0].atm[atoms].z=z;
-			m[0].atm[atoms].resnum=resnum;
-			m[0].atm[atoms].number=number; //atoi(number);
-			m[0].atm[atoms].rescount=residues;
-			m[0].atm[atoms].selected=TRUE;
-			strcpy(m[0].atm[atoms].name,name);
-			strcpy(m[0].atm[atoms].residue,residue);
-			strcpy(m[0].atm[atoms].resname,resname);
-			if(strcmp("CA ",name) == 0)
-			  {
-			    //printf("%s %s %s %s %d\n",m[0].filename,resname,residue,alt_loc,residues);
-			    m[0].CA_ref=realloc(m[0].CA_ref,sizeof(int)*(residues+1));
-			    m[0].CA_ref[residues-1]=atoms;
-			  }
-			//if(strcmp(old_resname,resname)!=0)
-			//	{
-			//	  m[0].sequence[residues-1]=aa321(residue);
-			//	}
-			
-			m[0].xcen+=x;
-			m[0].ycen+=y;
-			m[0].zcen+=z;
-			atoms++;
-			strcpy(old_resname,resname);
-		      }
-		  }
+		      m[0].sequence=realloc(m[0].sequence,sizeof(char)*(residues+1));
+		      //m[0].sequence=malloc(sizeof(char)*2000);
+		      m[0].sequence[residues]=aa321(residue);
+		      residues++;
+		      strcpy(alt_loc_check,alt_loc);
+		    }
+		  //sscanf(&buff[22],"%d %lf %lf %lf",&resnum,&x,&y,&z);
+		  //printf("test %d %s %s %d %lf %lf %lf\n",number,name,residue,resnum,x,y,z);
+		  if(strcmp(alt_loc_check,alt_loc)==0)
+		    {
+		      //printf("test: %s %s",m[0].filename,&buff);
+		      m[0].atm=realloc(m[0].atm,sizeof(atm)*(atoms+1));
+		      m[0].atm[atoms].x=x;
+		      m[0].atm[atoms].y=y;
+		      m[0].atm[atoms].z=z;
+		      m[0].atm[atoms].resnum=resnum;
+		      m[0].atm[atoms].number=number; //atoi(number);
+		      m[0].atm[atoms].rescount=residues;
+		      m[0].atm[atoms].selected=TRUE;
+		      strcpy(m[0].atm[atoms].name,name);
+		      strcpy(m[0].atm[atoms].residue,residue);
+		      strcpy(m[0].atm[atoms].resname,resname);
+		      if(strcmp("CA ",name) == 0)
+			{
+			  //printf("%s %s %s %s %d\n",m[0].filename,resname,residue,alt_loc,residues);
+			  m[0].CA_ref=realloc(m[0].CA_ref,sizeof(int)*(residues+1));
+			  m[0].CA_ref[residues-1]=atoms;
+			}
+		      //if(strcmp(old_resname,resname)!=0)
+		      //	{
+		      //	  m[0].sequence[residues-1]=aa321(residue);
+		      //	}
+		  
+		      m[0].xcen+=x;
+		      m[0].ycen+=y;
+		      m[0].zcen+=z;
+		      atoms++;
+		      strcpy(old_resname,resname);
+		    }
 		}
 	    }
 	}
-      if(atoms>0)  {
-	m[0].sequence=realloc(m[0].sequence,sizeof(char)*(residues+1));
-	m[0].sequence[residues]='\0';
-	m[0].atoms=atoms;
-	m[0].residues=residues;
-	m[0].xcen=m[0].xcen/atoms;
-	m[0].ycen=m[0].ycen/atoms;
-	m[0].zcen=m[0].zcen/atoms;
-	if(ss_flag == 0)
-	  {
-	    //fprintf(stderr,"No secondary structure information in file!\n");
-	  }
-      }
+      m[0].sequence=realloc(m[0].sequence,sizeof(char)*(residues+1));
+      m[0].sequence[residues]='\0';
+      m[0].atoms=atoms;
+      m[0].residues=residues;
+      m[0].xcen=m[0].xcen/atoms;
+      m[0].ycen=m[0].ycen/atoms;
+      m[0].zcen=m[0].zcen/atoms;
+      if(ss_flag == 0)
+	{
+	  //fprintf(stderr,"No secondary structure information in file!\n");
+	}
+
       fclose(fp);
       //#ifdef NOZLIB
       //  fclose(fp);
@@ -237,13 +224,13 @@ int free_dyn_molecule(dyn_molecule *m)
 }
 
 
-int read_molecules(molecule *m,char atomflag)	/* Reads in molecule */
+int read_molecules(molecule *m,char atomflag)	/* Reads in molecules to be superimposed */
 {
   int	i,j,k,atoms,residues;	/* Counter variables */
-  char	buff[3000];	/* Input string */
-  char	temp[3000];	/* Throwaway string */
-  char	line_flag[3000];	/* PDB file line mode */
-  char  desc_flag[3000];
+  char	buff[1200];	/* Input string */
+  char	temp[1000];	/* Throwaway string */
+  char	line_flag[11];	/* PDB file line mode */
+  char  desc_flag[20];
   char	residue[4];	/* PDB atom info for output */
   char	name[4];
   int   resnum;
@@ -265,7 +252,7 @@ int read_molecules(molecule *m,char atomflag)	/* Reads in molecule */
   char temp_resnum[11];
   char temp_bfactor[11];
   int ss_flag=0;
-  
+
   i=0; /* It is only one molecule to be read this was done for the moment instead of changing all "i" to 0 */
   
 
@@ -293,20 +280,16 @@ int read_molecules(molecule *m,char atomflag)	/* Reads in molecule */
       //#else
       //while(gzgets(fp,buff,255)!=NULL)
       //#endif
-      //printf("file: %s\n",m[0].filename);
       while(fgets(buff,1000,fp)!=NULL)
 	{
 	  //sscanf(buff,"%-6s %4d  %-3s%1s%3s %1s%5s    %7.3lf %7.3lf %7.3lf",line_flag,&number,name,residue,chain,&resnum,inscode,&x,&y,&z);
 	  //sscanf(buff,"%s %d %s %s %s",line_flag,&number,name,residue,resname);
 	  strcpy(line_flag,"undef");
-	  strcpy(desc_flag,"undef");
 	  sscanf(buff,"%s",line_flag);
-	  
+	  //printf("%s %s %s",m[0].filename,line_flag,&buff);
 	  if(strcmp("REMARK",line_flag)==0)
 	    {
-	      //printf("%s %s %s",m[0].filename,line_flag,&buff);
 	      sscanf(buff,"%s %s %s",line_flag,desc_flag,temp);
-	      //printf("%s %s %s\n",line_flag,desc_flag,temp);
 	      if(strcmp("SS",desc_flag)==0)
 		{
 		  strcpy(m[0].ss,temp);
@@ -324,25 +307,25 @@ int read_molecules(molecule *m,char atomflag)	/* Reads in molecule */
 		  //strcpy(m[0].method,temp);
 		  //printf("%lf\n",m[0].score);
 		}
- 	    }
-
-
+    	    }
 	  if(strcmp("MODEL",line_flag)==0)
 	    {
 	      sscanf(buff,"%s %s",line_flag,temp);
 	      m[0].rank=atoi(temp);
 	    }
 	  
-	  if(strcmp("ATOM",line_flag)==0 && (buff[12] != 'H' || buff[13] != 'H' ))	/* Is it an ATOM entry? */
+	  //ATOM   5307 3HD1 ILE   340     -27.009  -9.984  11.751  1.00  0.00
+	  if(strcmp("ATOM",line_flag)==0 && buff[12] != 'H' && buff[13] != 'H')	/* Is it an ATOM entry? */
 	    {
-	      //printf("Heja: %s %s\n",m[0].filename,&buff);
+	      //printf("Heja: %s %s",m[0].filename,&buff);
 	      strncpy_NULL(temp_number,&buff[6],5);
 	      strncpy_NULL(name,&buff[13],3);
 	      if(atomflag == 'a' || 
 		 (atomflag == 'c' && strcmp("CA ",name) == 0) || 
 		 (atomflag == 'b' && (strcmp("CA ",name) == 0 || strcmp("C  ",name) == 0 || strcmp("O  ",name) == 0 || strcmp("N  ",name) ==0)))
 		{
-		  //( printf("%s\n",name);
+		  //printf("%s",buff);
+		  // printf("%s %c %c %c %s\n",name,buff[12],buff[13],buff[24],buff);
 		  strncpy_NULL(alt_loc,&buff[16],1);
 		  strncpy_NULL(residue,&buff[17],3);
 		  strncpy_NULL(chain,&buff[21],1);
@@ -366,9 +349,9 @@ int read_molecules(molecule *m,char atomflag)	/* Reads in molecule */
 		  y=atof(y_temp);
 		  z=atof(z_temp);
 	      
-		  //printf("test: %s %d %s %s %s %s %d %s %lf %lf %lf\n",line_flag,number,name,alt_loc,residue,chain,resnum,resname,x,y,z);
+	      //printf("test: %s %d %s %s %s %s %d %s %lf %lf %lf\n",line_flag,number,name,alt_loc,residue,chain,resnum,resname,x,y,z);
 	      //if (strcmp("N",name)==0)	   /*  Is it an N atom => new residue? */
-		  //printf("%s %s\n",old_resname,resname);
+	      //printf("%s %s\n",old_resname,resname);
 		  if(strcmp(old_resname,resname)!=0)
 		    {
 		      m[0].sequence[residues]=aa321(residue);
@@ -396,7 +379,7 @@ int read_molecules(molecule *m,char atomflag)	/* Reads in molecule */
 		      
 		      if(strcmp("CA ",name) == 0)
 			{
-			  //printf("HEJ: %s %s %s %s %d\n",m[0].filename,resname,residue,alt_loc,residues);
+			  //printf("%s %s %s %s %d\n",m[0].filename,resname,residue,alt_loc,residues);
 			  m[0].CA_ref[residues-1]=atoms;
 			}
 		      //if(strcmp(old_resname,resname)!=0)
@@ -435,12 +418,12 @@ int read_molecules(molecule *m,char atomflag)	/* Reads in molecule */
 	  //  printf("Inconsistent number of atoms in file %s\n",m[0].filename);
 	  //  return(1);
 	  //}
-     
+       
     }
   else
     {
       printf("Couldn't open file \"%s\"\n",m[0].filename);
-      return(1); //exit(1);
+      exit(1);
     }
   return(0);
 }
@@ -1124,7 +1107,7 @@ double crd(molecule *m,int atomno1, int atomno2)       /* atomnoX is the first a
 		  //printf("%f ",dist);
 		  if(dist<lowest_dist)
 		    lowest_dist=dist;
-		  //	  printf("%s %s %f\n",m[0].atm[j].residue,m[0].atm[j].name,lowest_dist);
+		  //printf("%s %s %f\n",m[0].atm[j].residue,m[0].atm[j].name,lowest_dist);
 		}
 	    }
 	}
@@ -1359,10 +1342,11 @@ double fatness2(molecule *m)
 }
 
 
-char aa321(const char* res)
+char aa321(char* res)
 {
   //char check_res[4];
-   //check_res[0]=res[0];
+
+  //check_res[0]=res[0];
   //check_res[1]=res[1];
   //check_res[2]=res[2];
   //res[3]='\0';
@@ -1824,9 +1808,9 @@ char*  read_psipred(char* filename)
     }
 }
 
-char*  read_psipred2(char* filename,double* coil,double* helix,double* sheet)
+int  read_psipred2(char* filename,char* ss, double* coil,double* helix,double* sheet)
 {
-  char  *ss;
+  //  char  *ss;
   char	buff[512];	/* Input string */
   char	line_flag[11];	
   char  str[200];
@@ -1838,10 +1822,11 @@ char*  read_psipred2(char* filename,double* coil,double* helix,double* sheet)
   char coil_temp[10];
   char helix_temp[10];
   char sheet_temp[10];
-  ss=malloc(MAXRES*sizeof(char));
-  helix[i]=0.1;
-  coil[i]=0.1;
-  sheet[i]=0.3;
+  //  ss=malloc(MAXRES*sizeof(char));
+  
+  //helix[i]=0.1;
+  //coil[i]=0.1;
+  //sheet[i]=0.3;
   //printf("len temp: %d\n",strlen(temp));
   //printf("len ss: %d\n",strlen(ss));
   fp=fopen(filename,"r");	/* Does file exist? */
@@ -1874,8 +1859,40 @@ char*  read_psipred2(char* filename,double* coil,double* helix,double* sheet)
   //    printf("%c %lf %lf %lf\n",ss[j],coil[j],helix[j],sheet[j]);
   //  }
   ss[i]='\0';
-  return ss;
+  return 1;
 }
+
+/*enum aacodes
+{
+    A, R, N, D, C,
+    Q, E, G, H, I,
+    L, K, M, F,P,
+    S, T, W, Y, V,
+    U
+};
+
+enum aacodes
+{
+    ALA, ARG, ASN, ASP, CYS,
+    GLN, GLU, GLY, HIS, ILE,
+    LEU, LYS, MET, PHE, PRO,
+    SER, THR, TRP, TYR, VAL,
+    UNK
+};*/
+
+/* Convert AA letter to numeric code (0-20) */
+int
+aanum(int ch)
+{
+    static const int      aacvs[] =
+    {
+        999, 0, 20, 4, 3, 6, 13, 7, 8, 9, 20, 11, 10, 12, 2,
+        20, 14, 5, 1, 15, 16, 20, 19, 17, 20, 18, 20
+    };
+
+    return (isalpha(ch) ? aacvs[ch & 31] : 20);
+}
+
 
 int aa(char aa)
 {
@@ -2035,21 +2052,66 @@ void read_profile(char* filename,double (*prof)[22],char* seq)
 
 }
 
-
-char*  read_stride(char* filename)
+//Reads the higher precision profile created by makemat
+void read_profile_mtx(char* filename,int (*profile)[22],char* seq)
 {
-  char  *ss;
+  int i=0;
+  int j=0;
+  int line=0;
+  int check=0;
+  int seq_i=0;
+  int prof_col=0;
+  char	buff[512];
+  char  temp[15];
+  int   temp2=0;
+  
+  FILE *fp;
+  //printf("TEST: %d\n", prof[1][0]);
+  //prof[seq_i][prof_col]=0;
+  fp=fopen(filename,"r");	/* Does file exist? */
+  if (fp!=NULL)
+    {
+      while(fgets(buff,255,fp)!=NULL)
+	{
+
+	  line++;
+	  if(line == 2) { // get sequence
+	    strncpy_NULL(seq,&buff[0],strlen(buff)-1);
+	  }
+	  if (!strncmp(buff, "-32768 ", 7))
+	    {
+	      if (sscanf(buff, "%*d%d%*d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%*d%d", &profile[j][ALA],  &profile[j][CYS], &profile[j][ASP],  &profile[j][GLU],  &profile[j][PHE], &profile[j][GLY],  &profile[j][HIS],  &profile[j][ILE],  &profile[j][LYS],  &profile[j][LEU],  &profile[j][MET],  &profile[j][ASN],  &profile[j][PRO],  &profile[j][GLN],  &profile[j][ARG],  &profile[j][SER],  &profile[j][THR],  &profile[j][VAL],  &profile[j][TRP],  &profile[j][TYR]) != 20)
+		printf("Bad mtx format!\n");
+	      j++;
+	      
+	    }
+	}
+    }
+  else
+    {
+      //return 0;
+      fprintf(stderr,"Could not open %s\n",filename);
+      exit(1);
+    }
+
+}
+
+int  read_stride(char *filename, char* ss)
+{
+  // char  *ss;
   char  *temp;
   char	buff[512];	/* Input string */
   char	line_flag[11];
-  char  seq[2000];
+  char  seq[10000];
+  char  ss2[10000];
   char  str[200];
-  int   i=0;
+  char tmp[200];
+  int   i=0,j=0;
   FILE *fp;
   
-  ss=malloc(2000*sizeof(char));
-  strcpy(ss,"");
-  
+  //  ss=malloc(2000*sizeof(char));
+  strcpy(ss2,"");
+  strcpy(seq,"");
   //printf("len temp: %d\n",strlen(temp));
   //printf("len ss: %d\n",strlen(ss));
   fp=fopen(filename,"r");	/* Does file exist? */
@@ -2057,72 +2119,80 @@ char*  read_stride(char* filename)
     {
       while(fgets(buff,255,fp)!=NULL)
 	{
+	  //printf("BUFF: %s\n",buff);
 	  sscanf(buff,"%s",line_flag);
 	  if(strcmp(line_flag,"SEQ")==0)
 	    {
-	      //printf("%s\n",buff);
-	      strncpy(str,&buff[10],50);
-	      
-
-	      //strncpy(ss[i],&buff[24],1);
-
-	      //printf("%d\n",strlen(ss));
+	      //printf("BUFF: %s\n",buff);
+	      strncpy_NULL(str,&buff[10],50);
+	      //sscanf(buff,"%s %d %s",tmp,&i,str);
 	      //printf("%s",buff);
-	      //printf("%s\n",str);
+	      //	      printf("STR: %s\n",str);
+	      //printf("LEN: %d\n",strlen(str));
 	      strcat(seq,str);
 
 	    }
 	  if(strcmp(line_flag,"STR")==0)
 	    {
 	      // printf("%s\n",buff);
-	      strncpy(str,&buff[10],50);
-	      strcat(ss,str);
+	      strncpy_NULL(str,&buff[10],50);
+	      //printf("SEQ STR: %s\n",seq);
+	      //printf("SS STR: %s\n",str);
+	      // printf("SS LEN: %d\n",strlen(str));
+	      strcat(ss2,str);
 	    }
 	  if(strcmp(line_flag,"LOC")==0)
 	    break;
 	}
 	  
-      strcat(seq,"\0");
+      //      strcat(seq,"\0");
+      
+      //printf("%s\n",seq);
+      //printf("%s\n",ss2);
+      j=0;
       for(i=0;i<strlen(seq);i++){
 	if(seq[i] != ' ')
 	  {
-	    //	    printf("%c ",ss[i]);
-	    if(ss[i] == 'H' || ss[i] == 'G' || ss[i] == 'I')
+	    // printf("%d %c\n",i+1,ss[i]);
+	    if(ss2[i] == 'H' || ss2[i] == 'G' || ss2[i] == 'I')
 	      {
-		ss[i]='H';
+		ss[j]='H';
 	      }
 	    else{
-	      if(ss[i]=='E')
+	      if(ss2[i]=='E')
 		{
-		  ss[i]='E';
+		  ss[j]='E';
 		}
 	      else
 		{
-		  ss[i]='C';
+		  ss[j]='C';
 		}
 	    }
 	    //printf("%c %c\n",seq[i],ss[i]);
+	    j++;
 	  }
 	//printf("%c\n",seq[i]);
-	else
-	  {
-	    break;
-	  }
+	//	else
+	//  {
+	///    break;
+	//  }
       }
       
       //printf("%d %d\n",i,strlen(seq));
-      //printf("%s",seq);
-      ss[i]='\0';
-      return ss;
+      // printf("%s",seq);
+      ss[j]='\0';
+      //return ss;
     }
   else
     {
       fprintf(stderr,"Could not open %s\n",filename);
-      //return NULL;
       exit(1);
       //return 0;
       
     }
+  //  printf("SEQ: %s\n",seq);
+  //printf("SS :%s\n",ss);
+  return 0;
 }
 
 double* calculate_parameters(char* pdbfile,char* psipred)
@@ -2290,11 +2360,11 @@ double* calculate_parameters(char* pdbfile,char* psipred)
 	}
       else
 	{
-	  printf("Different strlen!!!!fgfdgfdg %lu %lu\n%s\%s\n",strlen(psipred),strlen(ss),psipred,ss);
+	  printf("Different strlen!!!!fgfdgfdg %d %d\n%s\%s\n",strlen(psipred),strlen(ss),psipred,ss);
 	  
 	}
     
-  free(ss);
+      free(ss);
   return parameters;
 }
  
@@ -2518,7 +2588,7 @@ double* ProQCA(char* pdbfile) //,char* psipred)
   else
     {
       if(strlen(m[0].ss)!=strlen(ss))
-	fprintf(stderr,"%s Different strlen\nPDB-SS %s (%lu)\nASSIGN-SS %s (%lu)\nSEQ %s\n",m[0].filename,m[0].ss,strlen(m[0].ss),ss,strlen(ss),m[0].sequence);
+	fprintf(stderr,"%s Different strlen\nPDB-SS %s (%d)\nASSIGN-SS %s (%d)\nSEQ %s\n",m[0].filename,m[0].ss,strlen(m[0].ss),ss,strlen(ss),m[0].sequence);
       //if(fat > 8)
       //	fprintf(stderr,"%s Fatness (%lf) > 8 assign quality 0 to avoid strange results\n",m[0].filename,fat);
       free(ss);
@@ -2756,7 +2826,7 @@ void ProQ(char** atom_vec,char** residue_vec,int* number_vec,rvec* coord_vec,siz
     }
      else
     {
-      fprintf(stderr,"Different strlen %lu %lu\nPRED: %s\n  SS: %s\n SEQ: %s\n",strlen(psipred),strlen(ss),psipred,ss,m[0].sequence);
+      fprintf(stderr,"Different strlen %d %d\nPRED: %s\n  SS: %s\n SEQ: %s\n",strlen(psipred),strlen(ss),psipred,ss,m[0].sequence);
       free(ss);
       quality[0]=-1;
       quality[1]=-1;
