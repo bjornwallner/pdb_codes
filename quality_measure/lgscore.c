@@ -982,7 +982,7 @@ void LGscore_res(char* file1,char* file2,lgscore *LG, double d0, double minsim,i
 	  //printf("calling superimpose 2\t %d %d\n",i,j);
 	  rms=superimpose_molecules(&m[0],&m[1],s,0.1);  //not so strict error cutoff on the superimpose
 #ifdef Sscore
-	  score=Levitt_Gerstein(&m[0],&m[1],d0);
+	  score=Levitt_Gerstein(&m[0],&m[1],d0*d0);
 	  //	  printf("SCORE: %f %f\n",score,d0);
 #else
 	  
