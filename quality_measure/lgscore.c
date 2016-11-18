@@ -195,7 +195,7 @@ double LGscore(char *file1,char *file2,double minsim,int L, double factor)
 	  center_molecule(&m[1]);
 	  //printf("calling superimpose 2\t %d %d\n",i,j);
 	  rms=superimpose_molecules(&m[0],&m[1],s,0.0001);
-	  score=Levitt_Gerstein(&m[0],&m[1]);
+	  score=Levitt_Gerstein(&m[0],&m[1],5); //d0=5 previous default
 	  //pvalue=LG_pvalue(j,score);
 	  pvalue=LG_pvalueF(j,score);
 	  if (b_flag)
@@ -554,8 +554,7 @@ double superimpose(char *file1,char *file2,char* file3,double minsim,int L, doub
 
 	  //multiply_matrix(rotation_matrix,s,t);
 	  //copy_matrix(t,rotation_matrix);
-	  score=Levitt_Gerstein(&m[0],&m[1]);
-	  //pvalue=LG_pvalue(j,score);
+	  score=Levitt_Gerstein(&m[0],&m[1],5);
 	  pvalue=LG_pvalueF(j,score);
 	  if (b_flag)
 	    {
@@ -982,8 +981,14 @@ void LGscore_res(char* file1,char* file2,lgscore *LG, double d0, double minsim,i
 	  center_molecule(&m[1]);
 	  //printf("calling superimpose 2\t %d %d\n",i,j);
 	  rms=superimpose_molecules(&m[0],&m[1],s,0.1);  //not so strict error cutoff on the superimpose
-	  score=Levitt_Gerstein(&m[0],&m[1]);
+#ifdef Sscore
+	  score=Levitt_Gerstein(&m[0],&m[1],d0);
+	  //	  printf("SCORE: %f %f\n",score,d0);
+#else
+	  
 	  //pvalue=LG_pvalue(j,score);
+	  score=Levitt_Gerstein(&m[0],&m[1],5);
+#endif
 	  pvalue=LG_pvalueF(j,score);
 	  
 	  //printf("TEST: %e\n", LG_pvalueF(227,1532.3));
@@ -1010,10 +1015,10 @@ void LGscore_res(char* file1,char* file2,lgscore *LG, double d0, double minsim,i
 	  //  if ((pvalue <= maxpvalue) && (j>minatoms))
 #ifdef Sscore
 	  if ((score >= maxscore) && (j>minatoms)) {
-	    //printf("Sscore rule!\n");
+	    //	    printf("Sscore rule!\n");
 	    //	  if ((pvalue <= maxpvalue) && (j>minatoms)) {  
 #else
-	   if ((pvalue <= maxpvalue) && (j>minatoms))  {
+	  if ((pvalue <= maxpvalue) && (j>minatoms))  {
 #endif
 	     //    { 
 	      if (fraction_flag)
@@ -1022,7 +1027,7 @@ void LGscore_res(char* file1,char* file2,lgscore *LG, double d0, double minsim,i
 			 (double)j/atoms,j,rms,score,
 			 pvalue);
 		}
-	      //printf ("TEST:\t%d\t%f\t%f\t%f\n",m[0].atoms,pvalue,rms,score);
+	      //printf ("TEST:\t%d\t%f\t%f\t%f\td0=%f\n",m[0].atoms,pvalue,rms,score,d0);
 	      maxpvalue=pvalue;
 	      maxatoms=j;
 	      maxrms=rms;
@@ -1198,7 +1203,7 @@ void LGscore_res(char* file1,char* file2,lgscore *LG, double d0, double minsim,i
 }
 
 
-  void LGscore_res_pt(dyn_molecule *m1,dyn_molecule *m2,lgscore *LG, double d0, double minsim,int L,double factor,int step) //, int *ignore_res)
+void LGscore_res_pt(dyn_molecule *m1,dyn_molecule *m2,lgscore *LG, double d0, double minsim,int L,double factor,int step) //, int *ignore_res)
 {
 
   molecule	m[3];		/* Molecules to be compared */
@@ -1364,9 +1369,10 @@ void LGscore_res(char* file1,char* file2,lgscore *LG, double d0, double minsim,i
       center_molecule(&m[1]);
       //printf("calling superimpose 2\t %d %d\n",i,j);
       rms=superimpose_molecules(&m[0],&m[1],s,0.1); //Not so strict error cut of here only 0.1.
-      score=Levitt_Gerstein(&m[0],&m[1]);
+      score=Levitt_Gerstein(&m[0],&m[1],d0*d0);
       //pvalue=LG_pvalue(j,score);
-      pvalue=LG_pvalueF(j,score);
+      double score5=Levitt_Gerstein(&m[0],&m[1],5);
+      pvalue=LG_pvalueF(j,score5);
 	  
       //printf("TEST: %e\n", LG_pvalueF(227,1532.3));
       if (b_flag)
@@ -1933,13 +1939,13 @@ int atom_exist(char* name,char* resname,molecule* m)
   return FALSE;
 }
 
-double Levitt_Gerstein(molecule *m1,molecule *m2)	
+double Levitt_Gerstein(molecule *m1,molecule *m2,double d0)	
 {
   int          i,j,last1,last2;
   int          numgap=0;
   double       sum=0.;
   //double       d0=25.; // 5**2
-  double       d0=5.;  // 2.24**2
+  //  double       d0=5.;  // 2.24**2
   double       M=20.;
   last1=m1->atm[0].resnum-1;
   last2=m2->atm[0].resnum-1;
