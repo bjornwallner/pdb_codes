@@ -162,7 +162,8 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag)	/* Reads in molecules 
 		      strcpy(m[0].atm[atoms].name,name);
 		      strcpy(m[0].atm[atoms].residue,residue);
 		      strcpy(m[0].atm[atoms].resname,resname);
-		      if(strcmp("CA ",name) == 0)
+		      strcpy(m[0].atm[atoms].chain,chain);
+		      if(strcmp("N  ",name) == 0)
 			{
 			  //printf("%s %s %s %s %d\n",m[0].filename,resname,residue,alt_loc,residues);
 			  m[0].CA_ref=realloc(m[0].CA_ref,sizeof(int)*(residues+1));
@@ -377,7 +378,7 @@ int read_molecules(molecule *m,char atomflag)	/* Reads in molecules to be superi
 		      strcpy(m[0].atm[atoms].resname,resname);
 		      strcpy(m[0].atm[atoms].chain,chain);
 		      
-		      if(strcmp("CA ",name) == 0)
+		      if(strcmp("N  ",name) == 0)
 			{
 			  //printf("%s %s %s %s %d\n",m[0].filename,resname,residue,alt_loc,residues);
 			  m[0].CA_ref[residues-1]=atoms;
@@ -1086,22 +1087,23 @@ void print_res(int res,FILE *fp)
 
 }
 
-double crd(molecule *m,int atomno1, int atomno2)       /* atomnoX is the first atom of the residue */
+
+double crd(dyn_molecule *m,int atomno1, int atomno2)       /* atomnoX is the first atom of the residue */
 {
   int i,j;
   double dist,lowest_dist;
   lowest_dist=999999;
   for(i=atomno1;m[0].atm[i].rescount == m[0].atm[atomno1].rescount;i++)  
     {
-      if(strcmp("C  ",m[0].atm[i].name)!=0 && 
-	 strcmp("O  ",m[0].atm[i].name)!=0 &&
-	 strcmp("N  ",m[0].atm[i].name)!=0)
+      //      if(strcmp("C  ",m[0].atm[i].name)!=0 && 
+      //	 strcmp("O  ",m[0].atm[i].name)!=0 &&
+      //	 strcmp("N  ",m[0].atm[i].name)!=0)
 	{
 	  for(j=atomno2;m[0].atm[j].rescount == m[0].atm[atomno2].rescount;j++)
 	    {
-	      if(strcmp("C  ",m[0].atm[j].name)!=0 && 
-		 strcmp("O  ",m[0].atm[j].name)!=0 &&
-		 strcmp("N  ",m[0].atm[j].name)!=0)
+	      //if(strcmp("!C  ",m[0].atm[j].name)!=0 && 
+	      //	 strcmp("!O  ",m[0].atm[j].name)!=0 &&
+	      //	 strcmp("!N  ",m[0].atm[j].name)!=0)
 		{
 		  dist=distance(m,i,j);
 		  //printf("%f ",dist);
@@ -1121,7 +1123,7 @@ double crd(molecule *m,int atomno1, int atomno2)       /* atomnoX is the first a
 
 
 
-double distance(molecule *m,int atomno1,int atomno2)
+double distance(dyn_molecule *m,int atomno1,int atomno2)
 {
   //printf("%s %s\n",m[0].atm[atomno1-1].name,m[0].atm[atomno2-1].name);
 

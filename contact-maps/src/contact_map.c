@@ -16,7 +16,7 @@ main(argc,argv)		/* Main routine */
      int argc;
      char *argv[];
 {
-  molecule      m[1];
+  dyn_molecule      m[1];
   int           i,j,k;
   double        d;
   double        mean=0;
@@ -63,7 +63,8 @@ main(argc,argv)		/* Main routine */
     }
 
 
-  error=read_molecules(m,'a');
+  //  error=read_molecules(m,'a');
+  error=read_molecules_dynamic(&m[0],'a');
   if(error==0)
     {  
       residues=m[0].residues;
@@ -154,7 +155,7 @@ main(argc,argv)		/* Main routine */
 	{
 	  // if(m[0].atm[m[0].CA_ref[i]].resnum == selected_resnum)
 	    {
-	      //printf("RES %d (%d) %c ",m[0].atm[m[0].CA_ref[i]].resnum,i+1,m[0].sequence[i]);
+	      //	      printf("RES %d (%d) %c %s",m[0].atm[m[0].CA_ref[i]].resnum,i+1,m[0].sequence[i],m[0].atm[m[0].CA_ref[i]].chain);
 	      chain_name=m[0].atm[m[0].CA_ref[i]].chain[0];
 	      if(chain_name == ' ') {
 		chain_name='_';

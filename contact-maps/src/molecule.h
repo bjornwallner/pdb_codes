@@ -126,11 +126,13 @@ int    get_atomtype(char *name, char *res);
 int    get_res6(char *res);
 int    get_res6_no_pointer(char res);
 int    get_res(char *res);
-double distance(molecule *m,int atomno1, int atomno2);
+//double distance(molecule *m,int atomno1, int atomno2);
+double distance(dyn_molecule *m,int atomno1, int atomno2);
 void   print_type(int type_no, FILE *fp);
 int    get_res(char *res);
 void   print_res(int res,FILE *fp);
-double crd(molecule *m,int atomno1, int atomno2);   /*closest residue distance */
+//double crd(molecule *m,int atomno1, int atomno2);   /*closest residue distance */
+double crd(dyn_molecule *m,int atomno1, int atomno2);   /*closest residue distance */
 double fatness(molecule *m);
 double fatness2(molecule *m);
 char   aa321(char *name);
