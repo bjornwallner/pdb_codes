@@ -83,14 +83,15 @@ main(argc,argv)		/* Main routine */
 
 		  if(m[0].atm[j].rescount!=current_res_j)
 		    {
-		      //printf("%d %d %d %d %f %f\n",current_res_j,current_res_i,i,j,crd(m,i,j),crd(m,j,i));
+		      //		      printf("%d %d %d %d %f %f\n",current_res_j,current_res_i,i,j,crd(m,i,j),crd(m,j,i));
 		      //	     {
 		      //    printf("%d %d %d %d %f %f\n",m[0].atm[j].rescount,m[0].atm[i].rescount,i,j,crd(m,i,j),crd(m,j,i));
 		      //printf("%d %s %s %i\n" ,m[0].atm[i].rescount,m[0].atm[i].name,m[0].atm[i].residue,m[0].atm[i].resnum);
 		      //printf("%d %s %s %i\n" ,m[0].atm[j].rescount,m[0].atm[j].name,m[0].atm[j].residue,m[0].atm[j].resnum);
 		      //printf("%d %d %d %d %f %f\n",m[0].atm[j].rescount,m[0].atm[i].rescount,i,j,crd(m,i,j),crd(m,j,i));
 		      //if(abs(m[0].atm[i].rescount-m[0].atm[j].rescount)>5 &&
-		      d=crd(m,i,j);
+		      //		      d=crd(m,i,j);
+		      d=CBdist(m,i,j);
 		      if(contacts[current_res_i][current_res_j]==0 && d<cutoff)
 			{
 			  //printf("%d %d %d %d %f %f\n",m[0].atm[j].rescount,m[0].atm[i].rescount,i,j,crd(m,i,j),crd(m,j,i));

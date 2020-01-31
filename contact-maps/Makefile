@@ -6,7 +6,7 @@ LFLAG=-O3 -funroll-loops -Isrc/
 
 
 contact_map: $(CONTACT_MAP)
-	$(CC) $(LFLAG) -o contact_map_chain_large $(CONTACT_MAP) -lm 
+	$(CC) $(LFLAG) -o contact_map_chain_CB $(CONTACT_MAP) -lm 
 
 contact_map.o: src/contact_map.c
 	$(CC) $(LFLAG) $(CCFLAG) -c src/contact_map.c -lm 

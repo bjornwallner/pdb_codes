@@ -4,7 +4,7 @@
 #include "nets.h"
 #define TRUE		1		/* Boolean definitions */
 #define FALSE		0
-#define	MAXATMS		25000		/* Maximum allowable atoms */
+#define	MAXATMS		10000		/* Maximum allowable atoms */
 #define	MAXRES		3000	        /* Maximum allowable residues */
 #define PI		3.14159265	/* Useful constant */
 #undef max
@@ -133,6 +133,7 @@ int    get_res(char *res);
 void   print_res(int res,FILE *fp);
 //double crd(molecule *m,int atomno1, int atomno2);   /*closest residue distance */
 double crd(dyn_molecule *m,int atomno1, int atomno2);   /*closest residue distance */
+double CBdist(dyn_molecule *m,int atomno1, int atomno2);   /*CB-CB dist */
 double fatness(molecule *m);
 double fatness2(molecule *m);
 char   aa321(char *name);

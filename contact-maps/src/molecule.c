@@ -12,6 +12,7 @@
    atomflag == a -> read all atoms (except H)
    atomflag == c -> CA atoms
    atomflag == b -> backbone CA,C,N,O atoms
+   atomflag == d -> CA+GLY or CB
 */
 
 int read_molecules_dynamic(dyn_molecule *m,char atomflag)	/* Reads in molecules to be superimposed */
@@ -115,14 +116,16 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag)	/* Reads in molecules 
 	      //printf("Heja: %s %s",m[0].filename,&buff);
 	      strncpy_NULL(temp_number,&buff[6],5);
 	      strncpy_NULL(name,&buff[13],3);
+	      strncpy_NULL(residue,&buff[17],3);
 	      if(atomflag == 'a' || 
 		 (atomflag == 'c' && strcmp("CA ",name) == 0) || 
-		 (atomflag == 'b' && (strcmp("CA ",name) == 0 || strcmp("C  ",name) == 0 || strcmp("O  ",name) == 0 || strcmp("N  ",name) ==0)))
-		{
+		 (atomflag == 'b' && (strcmp("CA ",name) == 0 || strcmp("C  ",name) == 0 || strcmp("O  ",name) == 0 || strcmp("N  ",name) ==0)) ||
+		 (atomflag == 'd' && (strcmp("CA ",name) == 0 && strcmp("GLY",residue) == 0) || strcmp("CB ",name) == 0))
+		  {
 		  //( printf("%s\n",name);
 		  //printf("%s %s",m[0].filename,&buff);
 		  strncpy_NULL(alt_loc,&buff[16],1);
-		  strncpy_NULL(residue,&buff[17],3);
+
 		  strncpy_NULL(chain,&buff[21],1);
 		  strncpy_NULL(temp_resnum,&buff[22],4);
 		  strncpy_NULL(resname,&buff[22],5);
@@ -135,7 +138,7 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag)	/* Reads in molecules 
 		  y=atof(y_temp);
 		  z=atof(z_temp);
 	      
-	      //printf("test: %s %d %s %s %s %s %d %s %lf %lf %lf\n",line_flag,number,name,alt_loc,residue,chain,resnum,resname,x,y,z);
+		  //		  printf("test: %s %d %s %s %s %s %d %s %lf %lf %lf\n",line_flag,number,name,alt_loc,residue,chain,resnum,resname,x,y,z);
 	      //if (strcmp("N",name)==0)	   /*  Is it an N atom => new residue? */
 	      //printf("%s %s\n",old_resname,resname);
 		  if(strcmp(old_resname,resname)!=0)
@@ -1110,6 +1113,35 @@ double crd(dyn_molecule *m,int atomno1, int atomno2)       /* atomnoX is the fir
 		  if(dist<lowest_dist)
 		    lowest_dist=dist;
 		  //printf("%s %s %f\n",m[0].atm[j].residue,m[0].atm[j].name,lowest_dist);
+		}
+	    }
+	}
+    }
+  //printf("%s %s %d %d\n",m[0].atm[i].residue,m[0].atm[i].name,m[0].atm[i].rescount,m[0].atm[atomno1].rescount);
+  //printf("%s %s %d %d\n",m[0].atm[j].residue,m[0].atm[j].name,m[0].atm[j].rescount,m[0].atm[atomno2].rescount);
+  return lowest_dist;
+}
+
+double CBdist(dyn_molecule *m,int atomno1, int atomno2)       /* atomnoX is the first atom of the residue */
+{
+  int i,j;
+  double dist,lowest_dist;
+  lowest_dist=999999;
+  for(i=atomno1;m[0].atm[i].rescount == m[0].atm[atomno1].rescount;i++)  
+    {
+      if((strcmp("CA ",m[0].atm[i].name)==0 && strcmp("GLY",m[0].atm[i].residue)==0) ||
+	 (strcmp("CB ",m[0].atm[i].name)==0)) 
+	{
+	  for(j=atomno2;m[0].atm[j].rescount == m[0].atm[atomno2].rescount;j++)
+	    {
+	      if((strcmp("CA ",m[0].atm[j].name)==0 && strcmp("GLY",m[0].atm[j].residue)==0) ||
+		 (strcmp("CB ",m[0].atm[j].name)==0)) 
+		{
+		  dist=distance(m,i,j);
+		  //printf("%f ",dist);
+		  if(dist<lowest_dist)
+		    lowest_dist=dist;
+		  // printf("%s %s - %s %s%f\n",m[0].atm[i].residue,m[0].atm[i].name,m[0].atm[j].residue,m[0].atm[j].name,lowest_dist);
 		}
 	    }
 	}
