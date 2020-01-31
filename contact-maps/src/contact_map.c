@@ -12,9 +12,7 @@
 //
 
 
-main(argc,argv)		/* Main routine */
-     int argc;
-     char *argv[];
+main(int argc,char *argv[])		/* Main routine */
 {
   dyn_molecule      m[1];
   int           i,j,k;
@@ -41,30 +39,67 @@ main(argc,argv)		/* Main routine */
   int tmp=0;
   int binary=1;
   char chain_name;
+  char chain1='_';
+  char chain2='_';
+  char set='a';
   //float        sum=0;
   /* Parse command line for PDB filename */
-  if(argc==2)
+  //printf('hej');
+  if(argc>=2)
     {
       strcpy(m[0].filename,argv[1]);
       binary=0;
-      //      cutoff=strtod(argv[2],(char**)(argv[2]+strlen(argv[2])));
-      //     cutoff=cutoff*cutoff;
-    }
-  else if(argc==3)
-    {
-      strcpy(m[0].filename,argv[1]);
-      cutoff=strtod(argv[2],(char**)(argv[2]+strlen(argv[2])));
-      cutoff=cutoff*cutoff;
+      i=2;
+      while(i<argc){
+
+	if(strcmp(argv[i],"-cb")==0) {
+	  set='d'; //Read in CB (or CA+GLY) only
+	}
+	if(strcmp(argv[i],"-ca")==0) {
+	  set='c'; //Read in CA
+	}
+	if(strcmp(argv[i],"-backbone")==0) {
+	  set='b'; //backbone
+	}
+	if(strcmp(argv[i],"-all")==0) {
+	    set='a'; //READ ALL ATOMS DEFAULT 
+	}
+	if(strcmp(argv[i],"-c")==0){
+	  cutoff=strtod(argv[i+1],NULL);
+	  cutoff=cutoff*cutoff;
+	  binary=1;
+	  i++;
+	}
+	if(strcmp(argv[i],"-chains")==0){
+	  if(i+2<argc){
+	    //printf("%s\n",argv[i+1]);
+	    //printf("%s\n",argv[i+2]);
+	    //    printf('hej');
+	    chain1=argv[i+1][0];
+	    chain2=argv[i+2][0];
+	    i++;
+	    i++;
+	  } else {
+	    printf("-chains need two chain identifiers, e.g A B\n");
+	    exit(1);
+	  }
+	  
+	  
+
+        }
+	i++;
+      }
+      printf("%s %lf %c %c %c\n",m[0].filename,cutoff,chain1,chain2,set);
+      //exit(1);
     }
   else
     {
-      printf("Usage: contact_map [pdb_file] cutoff(for binary otherwise distance)\n");
+      printf("Usage: contact_map_chain [pdb_file] -c cutoff(for binary otherwise distance)\n");
       exit(1);
     }
-
-
+  
   //  error=read_molecules(m,'a');
-  error=read_molecules_dynamic(&m[0],'a');
+  error=read_molecules_dynamic(&m[0],set,chain1,chain2);
   if(error==0)
     {  
       residues=m[0].residues;
@@ -90,8 +125,8 @@ main(argc,argv)		/* Main routine */
 		      //printf("%d %s %s %i\n" ,m[0].atm[j].rescount,m[0].atm[j].name,m[0].atm[j].residue,m[0].atm[j].resnum);
 		      //printf("%d %d %d %d %f %f\n",m[0].atm[j].rescount,m[0].atm[i].rescount,i,j,crd(m,i,j),crd(m,j,i));
 		      //if(abs(m[0].atm[i].rescount-m[0].atm[j].rescount)>5 &&
-		      //		      d=crd(m,i,j);
-		      d=CBdist(m,i,j);
+		      d=crd(m,i,j);
+		      //d=CBdist(m,i,j);
 		      if(contacts[current_res_i][current_res_j]==0 && d<cutoff)
 			{
 			  //printf("%d %d %d %d %f %f\n",m[0].atm[j].rescount,m[0].atm[i].rescount,i,j,crd(m,i,j),crd(m,j,i));

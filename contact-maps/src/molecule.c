@@ -15,7 +15,7 @@
    atomflag == d -> CA+GLY or CB
 */
 
-int read_molecules_dynamic(dyn_molecule *m,char atomflag)	/* Reads in molecules to be superimposed */
+int read_molecules_dynamic(dyn_molecule *m,char atomflag,char chain1, char chain2)	/* Reads in molecule */
 {
   int	i,j,k,atoms,residues;	/* Counter variables */
   char	buff[1200];	/* Input string */
@@ -42,7 +42,7 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag)	/* Reads in molecules 
   char temp_number[11];
   char temp_resnum[11];
   int ss_flag=0;
-
+    
   i=0; /* It is only one molecule to be read this was done for the moment instead of changing all "i" to 0 */
   
 
@@ -64,6 +64,7 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag)	/* Reads in molecules 
   m[0].method='\0';
   m[0].atm='\0';
   m[0].CA_ref='\0';
+  
   if (fp!=NULL)	/* If yes, read in coordinates */
     {
       /* Initialize things */
@@ -117,16 +118,22 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag)	/* Reads in molecules 
 	      strncpy_NULL(temp_number,&buff[6],5);
 	      strncpy_NULL(name,&buff[13],3);
 	      strncpy_NULL(residue,&buff[17],3);
+	      strncpy_NULL(chain,&buff[21],1);
+	      if(chain1 != '_') {
+		if(!(chain1==chain[0] || chain2==chain[0])) {
+		  continue;
+		}
+	      }
 	      if(atomflag == 'a' || 
 		 (atomflag == 'c' && strcmp("CA ",name) == 0) || 
-		 (atomflag == 'b' && (strcmp("CA ",name) == 0 || strcmp("C  ",name) == 0 || strcmp("O  ",name) == 0 || strcmp("N  ",name) ==0)) ||
-		 (atomflag == 'd' && (strcmp("CA ",name) == 0 && strcmp("GLY",residue) == 0) || strcmp("CB ",name) == 0))
+		 (atomflag == 'b' && ((strcmp("CA ",name) == 0 || strcmp("C  ",name) == 0 || strcmp("O  ",name) == 0 || strcmp("N  ",name) ==0))) ||
+		 (atomflag == 'd' && ((strcmp("CA ",name) == 0 && strcmp("GLY",residue) == 0) || strcmp("CB ",name) == 0)))
 		  {
 		  //( printf("%s\n",name);
 		  //printf("%s %s",m[0].filename,&buff);
 		  strncpy_NULL(alt_loc,&buff[16],1);
 
-		  strncpy_NULL(chain,&buff[21],1);
+
 		  strncpy_NULL(temp_resnum,&buff[22],4);
 		  strncpy_NULL(resname,&buff[22],5);
 		  strncpy_NULL(x_temp,&buff[30],8);
@@ -138,7 +145,7 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag)	/* Reads in molecules 
 		  y=atof(y_temp);
 		  z=atof(z_temp);
 	      
-		  //		  printf("test: %s %d %s %s %s %s %d %s %lf %lf %lf\n",line_flag,number,name,alt_loc,residue,chain,resnum,resname,x,y,z);
+		  //printf("test %c %c %c: %s %d %s %s %s %s %d %s %lf %lf %lf\n",atomflag,chain1,chain2,line_flag,number,name,alt_loc,residue,chain,resnum,resname,x,y,z);
 	      //if (strcmp("N",name)==0)	   /*  Is it an N atom => new residue? */
 	      //printf("%s %s\n",old_resname,resname);
 		  if(strcmp(old_resname,resname)!=0)
@@ -146,6 +153,8 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag)	/* Reads in molecules 
 		      m[0].sequence=realloc(m[0].sequence,sizeof(char)*(residues+1));
 		      //m[0].sequence=malloc(sizeof(char)*2000);
 		      m[0].sequence[residues]=aa321(residue);
+		      m[0].CA_ref=realloc(m[0].CA_ref,sizeof(int)*(residues+1));
+		      m[0].CA_ref[residues]=atoms;
 		      residues++;
 		      strcpy(alt_loc_check,alt_loc);
 		    }
@@ -166,12 +175,12 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag)	/* Reads in molecules 
 		      strcpy(m[0].atm[atoms].residue,residue);
 		      strcpy(m[0].atm[atoms].resname,resname);
 		      strcpy(m[0].atm[atoms].chain,chain);
-		      if(strcmp("N  ",name) == 0)
+		      /*		      if(strcmp("N  ",name) == 0)
 			{
 			  //printf("%s %s %s %s %d\n",m[0].filename,resname,residue,alt_loc,residues);
 			  m[0].CA_ref=realloc(m[0].CA_ref,sizeof(int)*(residues+1));
 			  m[0].CA_ref[residues-1]=atoms;
-			}
+			  }*/
 		      //if(strcmp(old_resname,resname)!=0)
 		      //	{
 		      //	  m[0].sequence[residues-1]=aa321(residue);

@@ -113,7 +113,7 @@ enum aacodes
     UNK
 };
 
-int    read_molecules_dynamic(dyn_molecule *m,char atomflag);
+int    read_molecules_dynamic(dyn_molecule *m,char atomflag,char chain1, char chain2);
 int    free_dyn_molecule(dyn_molecule *m);
 int    read_molecules(molecule *m,char atomflag);
 int    read_molecules_ca(molecule *m);
