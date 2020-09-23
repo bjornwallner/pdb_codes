@@ -112,7 +112,9 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag,char chain1, char chain
 	      m[0].rank=atoi(temp);
 	    }
 	  
-	  if(strcmp("ATOM",line_flag)==0 && (buff[12] != 'H' || buff[13] != 'H' ))	/* Is it an ATOM entry? */
+	  //
+	  if(strcmp("ATOM",line_flag)==0 && !(buff[12] == 'H' || buff[13] == 'H' ))	/* Is it an ATOM entry? */
+	    //if(strcmp("ATOM",line_flag)==0 && (buff[12] != 'H' || buff[13] != 'H' ))	/* Is it an ATOM entry? */
 	    {
 	      //printf("Heja: %s %s",m[0].filename,&buff);
 	      strncpy_NULL(temp_number,&buff[6],5);
@@ -145,7 +147,7 @@ int read_molecules_dynamic(dyn_molecule *m,char atomflag,char chain1, char chain
 		  y=atof(y_temp);
 		  z=atof(z_temp);
 	      
-		  //printf("test %c %c %c: %s %d %s %s %s %s %d %s %lf %lf %lf\n",atomflag,chain1,chain2,line_flag,number,name,alt_loc,residue,chain,resnum,resname,x,y,z);
+		  // printf("test %c %c %c: %s %d %s %s %s %s %d %s %lf %lf %lf\n",atomflag,chain1,chain2,line_flag,number,name,alt_loc,residue,chain,resnum,resname,x,y,z);
 	      //if (strcmp("N",name)==0)	   /*  Is it an N atom => new residue? */
 	      //printf("%s %s\n",old_resname,resname);
 		  if(strcmp(old_resname,resname)!=0)

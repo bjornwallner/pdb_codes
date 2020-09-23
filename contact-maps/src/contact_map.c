@@ -95,6 +95,11 @@ main(int argc,char *argv[])		/* Main routine */
   else
     {
       printf("Usage: contact_map_chain [pdb_file] -c cutoff(for binary otherwise distance)\n");
+      printf("\t-chains chain1 chain2, e.g. -chains A b\n");
+      printf("\t-ca use CA atoms\n");
+      printf("\t-cb use CB atoms\n");
+      printf("\t-backbone use backbone\n");
+      printf("\t-all use all heavy-atoms (default)\n");
       exit(1);
     }
   
@@ -213,7 +218,7 @@ main(int argc,char *argv[])		/* Main routine */
 			  if(chain_name == ' ') {
 			    chain_name='_';
 			  }
-			  printf("%d%c ",m[0].atm[m[0].CA_ref[j]].resnum,chain_name);
+			  printf("%d%c ",m[0].atm[m[0].CA_ref[j]].resname,chain_name);
 			  // if(first==0)
 			  //   {
 			  //     printf("[%d",j+1);
